@@ -1,0 +1,30 @@
+
+.store-items{
+    list-style: none;
+    padding-left: 0;
+    width: 60vw;
+    margin: 14vh auto;
+}
+
+.store-item .hat-items, .shirt-items, .pants-items{
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 15vh;
+    grid-gap: 10px;
+}
+
+.store-item .hat-item, .shirt-item, .pants-item{
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+}
+
+.store-item .hat-item:hover, .shirt-item:hover, .pants-item:hover{
+    border: 1px solid black;
+
+}
+
+.hat-item.selected, .shirt-item.selected, .pants-item.selected{
+    border: 1px solid black;
+}

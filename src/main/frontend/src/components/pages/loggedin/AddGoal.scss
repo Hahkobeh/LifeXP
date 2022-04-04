@@ -1,0 +1,80 @@
+@import '../../Variables.css';
+
+.circle{
+    background: #e3e3e3;
+    border-radius: 50%;
+    color: #6e6e6e;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    width: 40px;
+}
+
+.circle:hover{
+    color: #494545;
+}
+
+.circle.selection{
+    background: lightblue;
+    border-radius: 70%;
+}
+
+.new-goal{
+    font-family: var(--main-font);
+    width: 13cm;
+    width: 30rem;
+    margin: 3rem auto;
+    max-width: 40rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: .95rem;
+    z-index: 10;
+    position: fixed;
+    top: 10vh;
+    left: calc(50% - 15rem);
+    text-align:center;
+    background: white;
+}
+
+.Q{
+    margin: 0;
+}
+
+.goal-name input{
+    width: 95%;
+    height: 1.1cm;
+    border: 1px solid var(--nav-background);
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    
+    
+}
+
+.length input{
+    width: 30%;
+    margin-left: 5px;
+}
+
+.length{
+    margin-top: 5px;
+}
+
+#submitButton{
+    background-color: lightblue;
+    font-size: 120%;
+    font-family: var(--main-font);
+    color: darkgreen;
+    width: 95%;
+    height: 1cm;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+#submitButton:hover{
+    background-color: rgb(120, 208, 238);
+    color: rgb(49, 209, 49);
+}

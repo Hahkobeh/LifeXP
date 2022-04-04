@@ -1,0 +1,112 @@
+@import 'src/components/Variables';
+
+
+.card-container{
+    font-family: var(--main-font);
+    width: 13cm;
+    margin: 3rem auto;
+    max-width: 40rem;
+}
+.card-container .logo{
+    //padding-left: 30%;
+    margin: auto;
+    display: block;
+}
+
+.card-container .head{
+    text-align: center;
+    color: var(--nav-background);
+}
+
+.control input{
+    width: 95%;
+    height: 1.1cm;
+    border: 1px solid var(--nav-background);
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 1vh;
+    margin-left: 2.5%;
+}
+
+hr{ width: 95%;}
+
+.form .pwPage{
+    color: grey;
+    margin-bottom: 1vh;
+    text-align: center;
+    margin-left: 32%;
+}
+
+.form #submitButton{
+    background-color: var(--nav-background-2);
+    font-size: 120%;
+    font-family: var(--main-font);
+    color: var(--nav-link-color);
+    width: 95%;
+    height: 1cm;
+
+}
+
+.form #submitButton:hover{
+    background-color: var(--nav-background-2);
+    color: var(--nav-link-color);
+}
+
+.card-container .button{
+    font-family: var(--main-font);
+}
+
+.no-account .button{
+    color: var(--nav-background-2);
+    width: 95%;
+    height: 1cm;
+    border : 1px solid var(--nav-background-2);
+    border-radius: 25px;
+    font-size: 120%;
+    background: white;
+    margin-left:2.5%;
+    margin-bottom: 2vh;
+
+}
+
+
+.no-account .button:hover{
+    border: 1px solid white;
+    color: var(--nav-link-color);
+    background: var(--nav-background-2);
+}
+
+.error{
+    color: red;
+    margin-left: 2.5%;
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+}
+
+.card-container .label{
+    margin-left: 2.5%;
+   
+    
+ }
+
+ .text{
+     margin-left: 2.5%;
+     margin-right: 2.5%;
+ }
+
+
+@media screen and (max-width: 14cm){
+
+    .card-container{
+       
+        width: 95vw;
+        
+    }
+
+    .form .pwPage{
+        
+        margin-left: 25%;
+    }
+
+
+}
