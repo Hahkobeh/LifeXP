@@ -1,4 +1,4 @@
-package uofc.goalapp;
+package uofc.lifexp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package uofc.goalapp.user;
+package uofc.lifexp.user;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

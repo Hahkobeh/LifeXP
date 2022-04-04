@@ -1,4 +1,4 @@
-package uofc.goalapp.user;
+package uofc.lifexp.user;
 
 public class UserNotFoundException extends RuntimeException{
     public UserNotFoundException(String message){

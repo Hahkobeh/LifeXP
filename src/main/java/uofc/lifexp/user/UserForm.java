@@ -1,4 +1,4 @@
-package uofc.goalapp.user;
+package uofc.lifexp.user;
 
 import lombok.Data;
 
