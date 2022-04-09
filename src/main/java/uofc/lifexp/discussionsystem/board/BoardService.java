@@ -1,4 +1,4 @@
-package uofc.lifexp.discussion.board;
+package uofc.lifexp.discussionsystem.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

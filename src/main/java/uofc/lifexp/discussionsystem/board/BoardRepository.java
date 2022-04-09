@@ -1,4 +1,4 @@
-package uofc.lifexp.discussion.board;
+package uofc.lifexp.discussionsystem.board;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

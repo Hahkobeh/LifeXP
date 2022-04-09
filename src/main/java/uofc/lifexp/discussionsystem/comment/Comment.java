@@ -1,16 +1,15 @@
-package uofc.lifexp.discussion.post;
+package uofc.lifexp.discussionsystem.comment;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document("posts")
-public class Post {
+@Document("comments")
+public class Comment {
     @Id
     private String id;
-    private String boardId;
-    private String username;
-    private String title;
+    private String postId;
     private String body;
+
 }

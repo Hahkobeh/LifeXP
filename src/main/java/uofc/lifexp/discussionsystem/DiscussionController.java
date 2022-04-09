@@ -1,12 +1,12 @@
-package uofc.lifexp.discussion;
+package uofc.lifexp.discussionsystem;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uofc.lifexp.discussion.board.BoardService;
-import uofc.lifexp.discussion.comment.CommentService;
-import uofc.lifexp.discussion.post.PostService;
+import uofc.lifexp.discussionsystem.board.BoardService;
+import uofc.lifexp.discussionsystem.comment.CommentService;
+import uofc.lifexp.discussionsystem.post.PostService;
 
 @Controller
 @RequestMapping(path = "api/discussion")

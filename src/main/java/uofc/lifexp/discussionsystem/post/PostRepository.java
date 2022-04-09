@@ -1,8 +1,8 @@
-package uofc.lifexp.discussion.comment;
+package uofc.lifexp.discussionsystem.post;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CommentRepository extends MongoRepository<Comment,String> {
+public interface PostRepository extends MongoRepository<Post, String> {
 }
