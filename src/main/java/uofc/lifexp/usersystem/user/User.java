@@ -1,4 +1,4 @@
-package uofc.lifexp.user;
+package uofc.lifexp.usersystem.user;
 
 import lombok.Data;
 import org.bson.types.ObjectId;
@@ -10,19 +10,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     private String id;
+    private int type; //0 regular, 1 moderator
     private String username;
     private String password;
+    private int experience;
+    private int gold;
+
 
     //create new user change!
     public User(String username, String password){
         this.id = new ObjectId().toString();
-        this.username = username;
-        this.password = password;
-
-    }
-
-    public User(ObjectId id, String username, String password, float anagramRating, float wordleRating, float tbaRating) {
-        this.id = id.toString();
         this.username = username;
         this.password = password;
     }
