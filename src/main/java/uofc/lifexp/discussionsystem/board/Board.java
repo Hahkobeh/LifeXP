@@ -1,4 +1,4 @@
-package uofc.lifexp.discussion.board;
+package uofc.lifexp.discussionsystem.board;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

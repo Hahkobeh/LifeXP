@@ -1,4 +1,4 @@
-package uofc.lifexp.discussion.comment;
+package uofc.lifexp.discussionsystem.comment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
