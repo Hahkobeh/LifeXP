@@ -1,23 +1,25 @@
 
 .store-items{
     list-style: none;
-    padding-left: 0;
-    width: 60vw;
-    margin: 14vh auto;
+    width: 1150px;
+    margin: 14vh 0;
 }
 
 .store-item .hat-items, .shirt-items, .pants-items{
     
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     height: 15vh;
     grid-gap: 10px;
+   
 }
 
 .store-item .hat-item, .shirt-item, .pants-item{
+    height: 125px;
     border: 1px solid grey;
     display: flex;
     justify-content: center;
+    
 }
 
 .store-item .hat-item:hover, .shirt-item:hover, .pants-item:hover{
@@ -27,4 +29,61 @@
 
 .hat-item.selected, .shirt-item.selected, .pants-item.selected{
     border: 1px solid black;
+}
+
+@media screen and (min-width: 1200px){
+    .store-items{
+       
+        width: 1150px;
+        margin-left: calc(50% - 575px);
+        
+    }
+}
+
+@media screen and (max-width: 1150px){
+
+    .store-items{
+        width: 90%;
+        padding-left: 0;
+    }
+    .store-item .hat-items, .shirt-items, .pants-items{
+        margin-bottom: 150px;
+       
+    }
+    
+
+}
+@media screen and (max-width: 870px){
+
+    .store-items {
+        width: 90%;
+        margin: 14vh auto;
+        margin-left: 5%;
+    }
+    
+
+}
+
+@media screen and (max-width: 670px){
+
+    .store-items {
+        width: 90%;
+        margin: 14vh 0;
+    }
+    
+}
+
+
+@media screen and (max-width: 580px){
+
+    .store-items{
+        width: 90%;
+        padding-left: 10%;
+    }
+    .store-item .hat-items, .shirt-items, .pants-items{
+        margin-bottom: 425px;
+       
+    }
+    
+
 }

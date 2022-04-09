@@ -58,10 +58,31 @@ function LoginPage(){
 
         try{
 
-            //query data base and if user is exists log in if password and email matches
-            //set user to the user found in database
-            console.log(emailRef.current.value);
-            console.log(passwordRef.current.value);
+              /*let usernameValue;
+            let idValue;
+            let request = 'http://localhost:8081/user/api/v1/login'
+
+            let userData = {
+                username: emailRef.current.value,
+                password: passwordRef.current.value
+            }
+            await axios.post(request, userData)
+                .then(res => {
+                        console.log(res.data.toString() + 'happened!')
+                        usernameValue = res.data.username;
+                        idValue = res.data.id;
+
+                    }
+
+                )
+            console.log(usernameValue)
+            if(usernameValue === ''){
+                setError(true)
+                return
+            }
+
+            localStorage.setItem('username', usernameValue);
+            localStorage.setItem('id', idValue);*/
             const user = await login();
             setUser(user);
             setTask(user['tasks']);

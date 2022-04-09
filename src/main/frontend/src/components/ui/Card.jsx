@@ -4,17 +4,35 @@ import {GiCancel , GiCheckMark} from 'react-icons/gi';
 
 import './Card.scss';
 
+import axios from "axios";
 
 function Card(props){
 
-    function completedHandler(){
+    const currentName = localStorage.getItem("username");
+    async function completedHandler(){
+
+        let data = {
+            username: currentName,
+            status: 'Completed',
+            challengeId: props.id
+        }
         console.log(props.id);
         //connect to database and change status of task to completed
+        await axios.post(``)
+
     }
 
-    function cancelledHandler(){
+    async function cancelledHandler(){
         console.log(props.id);
+
+        let data = {
+            username: currentName,
+            status: 'Deleted',
+            challengeId: props.id
+        }
         //connect to database and change the task with props.id to cancelled
+
+        await axios.post(``)
 
     }
     return<div className="card">

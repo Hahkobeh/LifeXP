@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import { UserContext }  from '../../UserContext';
 import Navbar from '../../Navbar';
+import {BsPlusCircle} from 'react-icons/bs';
 
 import Post from '../../ui/Post';
 import './PostPage.scss';
@@ -63,6 +64,14 @@ const PostPage = () =>{
     return(
         <div className='all-posts'>
             <Navbar/>
+
+            <ul className="i-hate-having-to-add-this">
+
+                    <div className='add' >
+                        <BsPlusCircle size={40}/>
+                    </div>
+            </ul>
+
             <ul className ='post-list'>
             {posts.map(function(posts, index){
                 return <li className='post-list-item'>

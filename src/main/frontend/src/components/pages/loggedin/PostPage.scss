@@ -3,9 +3,40 @@
     padding-left: 0;
     width: 30vw;
     margin: 14vh auto;
-    
 }
 
 .post-list-item{
     margin-bottom: 20px;
+}
+
+.all-posts .i-hate-having-to-add-this{
+    
+    margin-top: 12vh;
+    padding-left: 90%;
+}
+
+.add{
+    color: grey;
+}
+
+.add:hover{
+    color: black;
+}
+
+@media screen and (max-width: 1520px){
+
+    .post-list{
+        width: 450px;
+    }
+    
+
+}
+
+@media screen and (max-width: 480px){
+
+    .post-list{
+        width: 90%;
+    }
+    
+
 }

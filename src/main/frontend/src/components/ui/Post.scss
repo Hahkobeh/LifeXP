@@ -62,3 +62,15 @@ button{
 .new-comment{
     padding-left: 90%;
 }
+
+
+@media screen and (max-width: 480px){
+    .post .stats{
+        display: flex;
+        padding-left: 10px;
+        justify-content: space-evenly;
+        width: 45%;
+    }
+    
+
+}

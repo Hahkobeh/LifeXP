@@ -4,7 +4,7 @@ import { useNavigate} from 'react-router-dom';
 import logo from '../../images/logo.svg';
 
 import './LoginPage.scss';
-
+import axios from "axios";
 
 function SignupPage(){
 
@@ -17,7 +17,7 @@ function SignupPage(){
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
-
+    
   
   
   
@@ -26,6 +26,7 @@ function SignupPage(){
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
     const [secondPasswordError, setSecondPasswordError] = useState(false);
+    const [userExists, setUserExists] = useState(false);
 
     function emailErrorHandler(){
         setEmailError(true);
@@ -62,8 +63,27 @@ function SignupPage(){
             return; 
         }
 
-        console.log(emailRef.current.value);
-        console.log(passwordRef.current.value);
+        let returnValue
+        let request = 'http://localhost:8081/user/api/v1/register'
+
+        let userData = {
+            username: emailRef.current.value,
+            password: passwordRef.current.value
+        }
+        await axios.post(request, userData)
+            .then(res => {
+                    console.log(res.data.toString() + 'happened!')
+                    returnValue = res.data
+                }
+
+            )
+        console.log(returnValue)
+        if(returnValue === true) {
+            navigate('/login')
+        }else{
+            setUserExists(true);
+            return
+        }
 
       
     }
@@ -94,6 +114,7 @@ function SignupPage(){
                     <label className="label"  htmlFor="pwordConfirm">Confirm your password:</label>
                     <input type='password' id="pwordConfirm" placeholder= 'Re-enter your password' ref={confirmPasswordRef}/>
                     {secondPasswordError && <p className="error">Passwords don't match.</p>}
+                    {userExists && <p className="error">Username is taken try another.</p>}
                     
                 </div>
                 <div className ="control">

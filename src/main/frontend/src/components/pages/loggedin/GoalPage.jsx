@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { UserContext }  from '../../UserContext';
 import {TaskContext } from '../../TaskContext';
 
@@ -11,23 +11,53 @@ import Card from '../../ui/Card';
 import AddGoal from './AddGoal';
 import Backdrop from './Backdrop';
 
+import axios from "axios";
+
 const GoalPage = () => {
 
+    //the following three lines need to be replaced with the setup function I have commented out
     const {user,  setUser} = useContext(UserContext);
     const { task, setTask } = useContext(TaskContext);
-
     var activeTasks = task;
+
+    const currentName = localStorage.getItem('username');
+
+    const [currentC, setCurrentC] = useState([]);
+    const [completedC, setCompletedC] = useState([]);
+    const [deletedC, setDeletedC] = useState([]);
+
+    useEffect( ()=> {
+        SetUp();
+    }, []);
+
+    async function SetUp(){
+        await axios.get(``)
+            .then( res=> {
+                setCurrentC(res.data);
+        });
+        await axios.get(``)
+        .then( res=> {
+            setCompletedC(res.data);
+        });
+        await axios.get(``)
+        .then( res=> {
+            setDeletedC(res.data);
+        });
+    }
     
 
     const [click, setClick] = useState(false);
 
-    const handleClick = () => setClick(!click);
+    function handleClick(){
+        console.log("it should close");
+        setClick(!click);
+    } 
 
     return(
        
         <div className = "goal-page">
             <Navbar/>
-            {click && <AddGoal/>}
+            {click && <AddGoal handler = {handleClick}/>}
             {click && <Backdrop onCancel={handleClick}/>}
 
             <div className="goal-container">
