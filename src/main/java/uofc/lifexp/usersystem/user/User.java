@@ -10,11 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     private String id;
-    private int type; //0 regular, 1 moderator
+    private int type = 0; //0 regular, 1 moderator
     private String username;
     private String password;
-    private int experience;
-    private int gold;
+    private int experience = 0;
+    private int gold = 0;
 
 
     //create new user change!
@@ -23,6 +23,10 @@ public class User {
         this.username = username;
         this.password = password;
     }
+
+
+
+
     public User(){
 
     }
