@@ -1,0 +1,22 @@
+.testimonials{
+    position: absolute;
+    left: 0;
+    top: 130vh;
+    z-index: -1;
+    display: flex;
+}
+
+.img-container{
+    width: 30%;
+    margin: 10vh 10%;
+    
+}
+
+.container{
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+.container h3{
+    text-align: center;
+}

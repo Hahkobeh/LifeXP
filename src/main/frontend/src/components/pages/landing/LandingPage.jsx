@@ -12,6 +12,7 @@ function LandingPage(){
             
             <Main/>
             <About/>
+            <Testimonials/>
             <Contact/>
             
         </div>
