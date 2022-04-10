@@ -60,6 +60,7 @@ function LoginPage(){
 
             let usernameValue;
             let idValue;
+            let type;
             let request = 'http://localhost:8080/api/user/login'
 
             let userData = {
@@ -71,7 +72,7 @@ function LoginPage(){
                         console.log(res.data.toString() + 'happened!')
                         usernameValue = res.data.username;
                         idValue = res.data.id;
-
+                        type = res.data.type;
                     }
 
                 )
@@ -83,11 +84,8 @@ function LoginPage(){
 
             localStorage.setItem('username', usernameValue);
             localStorage.setItem('id', idValue);
-            //console.log(localStorage.getItem('username'));
-            //const user = await login();
-            //setUser(user);
-            //setTask(user['tasks']);
-            navigate('/manage');
+            localStorage.setItem('type', type)
+            navigate('/goals');
             
         }catch(err){
             console.log(err);
