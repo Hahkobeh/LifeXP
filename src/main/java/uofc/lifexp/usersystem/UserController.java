@@ -30,6 +30,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @ResponseBody
     public boolean register(@RequestBody UserForm userForm){
         System.out.println("Register request received");
         return userService.createUser(userForm.getUsername(),userForm.getPassword());
@@ -42,6 +43,10 @@ public class UserController {
         return friendService.getFriends(username);
     }
 
+
+    public User getUser(String id){
+        return userService.getUser(id);
+    }
 
 
 }
