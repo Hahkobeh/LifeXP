@@ -37,8 +37,9 @@ public class GoalService {
         return null;
     }
 
-    public void deleteGoal(String id){
+    public boolean deleteGoal(String id){
         goalRepository.deleteById(id);
+        return true;
     }
 
     public void completeGoal(String id) {
