@@ -40,8 +40,10 @@ public class GoalController {
     }
 
     @PutMapping("/complete/{id}")
-    public void completeGoal(@PathVariable String id){
+    @ResponseBody
+    public boolean completeGoal(@PathVariable String id){
         goalService.completeGoal(id);
+        return true;
     }
 
     @PostMapping("/test")
