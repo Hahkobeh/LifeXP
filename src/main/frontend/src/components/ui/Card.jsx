@@ -14,7 +14,7 @@ function Card(props){
         console.log(props.id);
         //connect to database and change status of task to completed
         
-        await axios.post(`http://localhost:8080/api/goal/complete/${props.id}`)
+        await axios.put(`http://localhost:8080/api/goal/complete/${props.id}`)
         props.reset();
     }
 

@@ -16,9 +16,15 @@ const ManagePage = () => {
     const [shirt, setShirt] = useState(-1);
     const [pants, setPants] = useState(-1);
 
+    let sHat = '';
+    let sShirt = '';
+    let sPants ='';
 
     function changeHat(id){
         //change img src for Hat
+        if(id === 'Pirate'){
+            sHat = "../../images/pirate-hat.png";
+        }
         setHat(id);
     }
     function changeShirt(id){
@@ -49,7 +55,7 @@ const ManagePage = () => {
                     <h1>Current Outfit</h1>
                     <li>
                         <div className="selected-item">
-                            <img src='' alt='Selected Hat'/>
+                            <img src={sHat} alt='Selected Hat'/>
                         </div>
                     </li>
                     <li>
