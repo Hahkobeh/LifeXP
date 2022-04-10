@@ -45,8 +45,9 @@ public class GoalService {
     public void completeGoal(String id) {
         Optional<Goal> goal = goalRepository.findById(id);
         if(goal.isPresent()){
-            goal.get().setStatus(1);
-            goalRepository.save(goal.get());
+            Goal goal1 = goal.get();
+            goal1.setStatus(1);
+            goalRepository.save(goal1);
         }
     }
 }
