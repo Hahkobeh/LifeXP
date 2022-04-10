@@ -6,6 +6,21 @@ import Navbar from '../../Navbar';
 import './ManagePage.scss';
 import { FaBlackberry } from 'react-icons/fa';
 
+import defaultHat from '../../images/monkey.png';
+import defaultShirt from '../../images/cloth.png';
+import defaultPants from '../../images/pants.png';
+
+import pirateHat from '../../images/pirate-hat.png';
+import pirateShirt from '../../images/pirate-shirt.png';
+import piratePants from '../../images/wooden-leg.png';
+
+import ninjaHat from "../../images/ninja-head.png";
+import ninjaShirt from "../../images/ninja-body.png";
+import ninjaPants from "../../images/ninja-legs.png";
+
+import knightHat from "../../images/knight.png";
+import knightShirt from "../../images/armor.png";
+import knightPants from "../../images/armour.png";
 
 
 const ManagePage = () => {
@@ -16,16 +31,11 @@ const ManagePage = () => {
     const [shirt, setShirt] = useState(-1);
     const [pants, setPants] = useState(-1);
 
-    let sHat = '';
-    let sShirt = '';
-    let sPants ='';
 
     function changeHat(id){
         //change img src for Hat
-        if(id === 'Pirate'){
-            sHat = "../../images/pirate-hat.png";
-        }
-        setHat(id);
+        setHat(pirateHat);
+        console.log(hat)
     }
     function changeShirt(id){
 
@@ -55,7 +65,7 @@ const ManagePage = () => {
                     <h1>Current Outfit</h1>
                     <li>
                         <div className="selected-item">
-                            <img src={sHat} alt='Selected Hat'/>
+                            <img src={hat} alt='Selected Hat'/>
                         </div>
                     </li>
                     <li>
@@ -68,8 +78,7 @@ const ManagePage = () => {
                             <img src='' alt='Selected Pants'/>
                         </div>
                     </li>
-                    
-
+                
 
                 </ul>
 
@@ -79,14 +88,14 @@ const ManagePage = () => {
                         <h1>Pirate Garments:</h1>
                         <div className = 'hat-items'>
 
-                            <div className={hat === 'Pirate' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('Pirate')}>
-                                <img src={require("../../images/pirate-hat.png")} alt='Pirate Hat'/>
+                            <div className={hat === 'Pirate' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('../../images/pirate-hat.png')}>
+                                <img src={pirateHat} alt='Pirate Hat'/>
                             </div>
                             <div className={shirt === 'Pirate' ? 'shirt-item selected' : 'hat-item'} onClick={() => changeShirt('Pirate')}>
-                                <img src={require("../../images/pirate-shirt.png")} alt='Pirate Shirt' />
+                                <img src={pirateShirt} alt='Pirate Shirt' />
                             </div>
                             <div className={pants === 'Pirate' ? 'pants-item selected' : 'hat-item'} onClick={() => changePants('Pirate')}>
-                                <img src={require("../../images/wooden-leg.png")} alt='Pirate Pants'/>
+                                <img src={piratePants} alt='Pirate Pants'/>
                             </div>
                     
                         </div>
@@ -95,13 +104,13 @@ const ManagePage = () => {
                         <h1>Ninja Garments:</h1>
                         <div className = 'shirt-items'>
                             <div className={hat === 'Ninja' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeHat('Ninja')}>
-                                <img src={require("../../images/ninja-head.png")} alt='Ninja Hat'/>
+                                <img src={ninjaHat} alt='Ninja Hat'/>
                             </div>
                             <div className={shirt === 'Ninja' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeShirt('Ninja')}>
-                                <img src={require("../../images/ninja-body.png")} alt='Ninja Shirt'/>
+                                <img src={ninjaShirt} alt='Ninja Shirt'/>
                             </div>
                             <div className={pants === 'Ninja' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changePants('Ninja')}>
-                                <img src={require("../../images/ninja-legs.png")} alt='Ninja Pants'/>
+                                <img src={ninjaPants} alt='Ninja Pants'/>
                             </div>
                             
                         </div>
@@ -110,13 +119,13 @@ const ManagePage = () => {
                         <h1>Knight Garments:</h1>
                         <div className = 'pants-items'>
                             <div className={hat === 'Knight' ? 'pants-item selected' : 'pants-item'} onClick={() => changeHat('Knight')}>
-                                <img src={require("../../images/knight.png")} alt='Knight head'/>
+                                <img src={knightHat} alt='Knight head'/>
                             </div>
                             <div className={pants === 'Knight' ? 'pants-item selected' : 'pants-item'} onClick={() => changeShirt('Knight')}>
-                                <img src={require("../../images/armor.png")} alt='Knight shirt'/>
+                                <img src={knightShirt} alt='Knight shirt'/>
                             </div>
                             <div className={pants === 'Knight' ? 'pants-item selected' : 'pants-item'} onClick={() => changePants('Knight')}>
-                                <img src={require("../../images/armour.png")} alt='Knight pants'/>
+                                <img src={knightPants} alt='Knight pants'/>
                             </div>
                             
                         </div>
