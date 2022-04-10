@@ -34,8 +34,9 @@ public class GoalController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteGoal(@PathVariable String id){
-        goalService.deleteGoal(id);
+    @ResponseBody
+    public boolean deleteGoal(@PathVariable String id){
+        return goalService.deleteGoal(id);
     }
 
     @PutMapping("/complete/{id}")
