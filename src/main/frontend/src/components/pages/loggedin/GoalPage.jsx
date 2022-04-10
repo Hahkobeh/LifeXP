@@ -80,7 +80,7 @@ function GoalPage(){
                 <ul className='task-list'>
                     {currentC.map(function(currentC, index){
                         return <li className='task-list-item' key={index}>
-                            <Card id={currentC.id}>
+                            <Card id={currentC.id} reset={SetUp}>
                                 <h1 className='task-title'>{currentC.title}</h1>
                                 
                             </Card>

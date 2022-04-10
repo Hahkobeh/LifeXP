@@ -13,16 +13,17 @@ function Card(props){
 
         console.log(props.id);
         //connect to database and change status of task to completed
+        
         await axios.post(`http://localhost:8080/api/goal/delete/${props.id}`)
-
+        props.reset();
     }
 
     async function cancelledHandler(){
         console.log(props.id);
         //connect to database and change the task with props.id to cancelled
-
+        
         await axios.delete(`http://localhost:8080/api/goal/delete/${props.id}`)
-
+        props.reset();
     }
     return<div className="card">
 
