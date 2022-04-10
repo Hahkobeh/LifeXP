@@ -2,6 +2,7 @@ package uofc.lifexp.usersystem.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uofc.lifexp.goal.goal.Goal;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +18,8 @@ public class UserService {
     }
 
     public Boolean createUser(String username, String password){
-        List<User> user = userRepository.findByUsername(username);
-        if(user.isEmpty()){
+        User user = userRepository.findByUsername(username);
+        if(user != null){
             System.out.println("user not found, creating a user");
             User newUser = new User(username, password);
             userRepository.save(newUser);
@@ -74,6 +75,17 @@ public class UserService {
         }else{
             return null;
         }
+    }
+
+    public boolean giveRewards(Goal goal){
+        User user = userRepository.findByUsername(goal.getUsername());
+        int rewardConstant = goal.getDifficulty() * 10;
+        if(goal.getStatus() == 2){
+            rewardConstant = (int) (rewardConstant * 0.6);
+        }
+        user.setExperience(user.getExperience() + (rewardConstant * 10));
+        user.setGold(user.getGold() + rewardConstant);
+        return true;
     }
 
 
