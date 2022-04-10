@@ -21,4 +21,9 @@ public class PostService {
     public List<Post> getPosts(String boardId){
         return postRepository.findAllByBoardId(boardId);
     }
+
+    public boolean deletePost(String id){
+        postRepository.deleteById(id);
+        return true;
+    }
 }

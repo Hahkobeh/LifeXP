@@ -11,4 +11,5 @@ public class Inventory {
     private String id;
     private String username;
     private String itemId;
+    private boolean equipped; //0 uneq 1 equiped
 }
