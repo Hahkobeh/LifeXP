@@ -52,6 +52,12 @@ public class UserController {
         return false;
     }
 
+    @GetMapping("/get-user/{id}")
+    @ResponseBody
+    public User getUser(@PathVariable String id){
+        return userService.getUser(id);
+    }
+
 
 
 }

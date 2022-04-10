@@ -21,4 +21,14 @@ public class CommentService {
     public List<Comment> getComments(String postId){
         return commentRepository.findAllByPostId(postId);
     }
+
+    public boolean deleteComment(String id){
+        commentRepository.deleteById(id);
+        return true;
+    }
+
+    public boolean deleteCommmentsByPostId(String postId){
+        commentRepository.deleteAllByPostId(postId);
+        return true;
+    }
 }

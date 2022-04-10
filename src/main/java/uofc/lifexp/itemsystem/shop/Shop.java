@@ -8,6 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("shops")
 public class Shop {
     @Id
-    private String id;
-    private String shopName;
+    private String shopName; //pirate
+    private int cost; //100
+    private int requiredXp; //1000
+
+    public Shop(){}
 }
