@@ -8,7 +8,7 @@ import './Post.scss';
 
 function Post(props){
 
-    const isAdmin = localStorage.getItem('admin');
+    const isAdmin = localStorage.getItem('type');
 
     const [postOpen, setPostOpen] = useState(false);
     const [openTextBox, setOpenTextBox] = useState(false);
@@ -38,6 +38,7 @@ function Post(props){
 
     function postOptions(){
         setOpenOptions(!openOptions);
+        setCommentSelectable(false);
     }
 
     function delPostHandler(){
@@ -51,9 +52,10 @@ function Post(props){
         if(commentSelectable){
             //delete the comment
         }
+        setCommentSelectable(false);
     }
 
-    if(true){
+    if(isAdmin === 1){
 
         return (
             <div className ='super-cont'>

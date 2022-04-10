@@ -32,18 +32,25 @@ function GoalPage(){
     }, []);
 
     async function SetUp(){
+        let b = [];
         await axios.get(`http://localhost:8080/api/goal/get-goals/${currentName}`)
             .then( res=> {
 
                 //let completed = res.data.filter( e => e.status == 1);
                 //let overdue = res.data.filter( e => e.status == 2);
                 //let active = res.data.filter( e => e.status == 0);
+                b= res.data;
                 setCurrentC(res.data);
                 //setCompletedC(completed);
                 //setOverdueC(overdue);
                 
         });
-        
+        const c = b.filter(b => b.status === 1);
+        const d = b.filter(b => b.status !== 1);
+        console.log(c);
+        console.log(d);
+        setCompletedC(c);
+        setCurrentC(d);
     }
     
 
@@ -80,9 +87,10 @@ function GoalPage(){
                 <ul className='task-list'>
                     {currentC.map(function(currentC, index){
                         return <li className='task-list-item' key={index}>
-                            <Card id={currentC.id} reset={SetUp}>
-                                <h1 className='task-title'>{currentC.title}</h1>
+                            <Card id={currentC.id} status={currentC.status} reset={SetUp}>
                                 
+                                {currentC.status !== 2 && <h1 className='task-title'>{currentC.title}</h1>}
+                                {currentC.status === 2 && <h1>{currentC.title} (Overdue)</h1>}
                             </Card>
                             
                             </li>;

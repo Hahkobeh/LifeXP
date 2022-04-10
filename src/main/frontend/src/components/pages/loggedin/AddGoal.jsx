@@ -38,6 +38,7 @@ function AddGoal(props){
         }
 
         await axios.post(`http://localhost:8080/api/goal/create-goal`, data);
+        console.log("it is not adding goal for some reason0");
         props.handler();
 
     }

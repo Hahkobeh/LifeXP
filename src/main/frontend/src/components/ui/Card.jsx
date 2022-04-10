@@ -14,7 +14,7 @@ function Card(props){
         console.log(props.id);
         //connect to database and change status of task to completed
         
-        await axios.post(`http://localhost:8080/api/goal/delete/${props.id}`)
+        await axios.put(`http://localhost:8080/api/goal/complete/${props.id}`)
         props.reset();
     }
 
@@ -25,7 +25,7 @@ function Card(props){
         await axios.delete(`http://localhost:8080/api/goal/delete/${props.id}`)
         props.reset();
     }
-    return<div className="card">
+    return<div className={props.status === 2 ? "card overdue": "card"}>
 
         <div className="card-cont">
             <div className="goal-info">
