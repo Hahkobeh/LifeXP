@@ -1,52 +1,23 @@
-@import '../../Variables.scss';
-
-.circle{
-    background: #e3e3e3;
-    border-radius: 50%;
-    color: #6e6e6e;
-    display: inline-block;
-    font-weight: bold;
-    line-height: 40px;
-    margin-right: 5px;
-    text-align: center;
-    width: 40px;
-}
-
-.circle:hover{
-    color: #494545;
-}
-
-.circle.selection{
-    background: lightblue;
-    border-radius: 70%;
-}
-
-.finish-by{
-    margin-top: 10px;
-    
-}
-
-.new-goal{
+.new-post{
     font-family: var(--main-font);
-    width: 13cm;
-    width: 30rem;
+    width: 600px;
     margin: 3rem auto;
-    max-width: 40rem;
+    
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     border-radius: .95rem;
     z-index: 10;
     position: fixed;
     top: 10vh;
-    left: calc(50% - 15rem);
+    left: calc(50% - 300px);
     text-align:center;
     background: white;
 }
 
-.Q{
+.post-something{
     margin: 0;
 }
 
-.goal-name input{
+.post-name input{
     width: 95%;
     height: 1.1cm;
     border: 1px solid var(--nav-background);
@@ -58,15 +29,11 @@
     
 }
 
-.length input{
-    width: 30%;
-    margin-left: 5px;
+.post-body textarea{
+    font-size: large;
+    width: 94%;
+    resize: none;
 }
-
-.length{
-    margin-top: 5px;
-}
-
 #submitButton{
     background-color: lightblue;
     font-size: 120%;
@@ -84,8 +51,8 @@
     color: rgb(49, 209, 49);
 }
 
-@media screen and (max-width: 515px){
-    .new-goal{
+@media screen and (max-width: 675px){
+    .new-post{
         width: 90%;
         left: 5%;
     }

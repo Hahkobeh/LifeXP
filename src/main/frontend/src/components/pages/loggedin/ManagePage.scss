@@ -1,11 +1,15 @@
 
+.store-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
 .store-items{
     list-style: none;
     width: 1150px;
     margin: 14vh 0;
 }
 
-.store-item .hat-items, .shirt-items, .pants-items{
+.hat-items, .shirt-items, .pants-items{
     
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
@@ -14,7 +18,7 @@
    
 }
 
-.store-item .hat-item, .shirt-item, .pants-item{
+.hat-item, .shirt-item, .pants-item{
     height: 125px;
     border: 1px solid grey;
     display: flex;
@@ -22,7 +26,7 @@
     
 }
 
-.store-item .hat-item:hover, .shirt-item:hover, .pants-item:hover{
+ .hat-item:hover, .shirt-item:hover, .pants-item:hover{
     border: 1px solid black;
 
 }
@@ -31,7 +35,7 @@
     border: 1px solid black;
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1440px){
     .store-items{
        
         width: 1150px;
@@ -40,50 +44,90 @@
     }
 }
 
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1600px){
 
     .store-items{
         width: 90%;
-        padding-left: 0;
+        padding-left: 20%;
     }
+    
+}
+@media screen and (max-width: 1260px){
+
+    .store-items {
+        width: 90%;
+        padding-left: 5%;
+    }
+    
+
+}
+
+@media screen and (max-width: 1156px){
+
+    .store-items {
+        width: 90%;
+        padding-left: 10%;
+        margin: 14vh 0;
+    }
+
     .store-item .hat-items, .shirt-items, .pants-items{
         margin-bottom: 150px;
        
     }
     
-
 }
-@media screen and (max-width: 870px){
-
-    .store-items {
-        width: 90%;
-        margin: 14vh auto;
-        margin-left: 5%;
+@media screen and (max-width: 898px){
+    .store-items{
+        padding-left: 2.5%;
     }
-    
-
-}
-
-@media screen and (max-width: 670px){
-
-    .store-items {
-        width: 90%;
-        margin: 14vh 0;
-    }
-    
 }
 
 
-@media screen and (max-width: 580px){
+@media screen and (max-width: 878px){
 
     .store-items{
         width: 90%;
         padding-left: 10%;
     }
     .store-item .hat-items, .shirt-items, .pants-items{
-        margin-bottom: 425px;
+        margin-bottom: 300px;
        
     }
     
 
+}
+
+//selected settings
+
+.selected-items{
+    list-style: none;
+    margin: 14vh auto;
+}
+
+.selected-item{
+    height: 125px;
+    width: 250px;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+
+@media screen and (max-width: 555px){
+
+    .store-container{
+        display: inline-block;
+        margin: 0 auto;
+        margin-left: calc(50% - 125px);
+    }
+    .selected-items{
+        padding-left: 0;
+    }
+    .store-items{
+        padding-left: 0;
+    }
+    
+    
 }

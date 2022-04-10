@@ -8,8 +8,8 @@ function AddGoal(props){
     const currentName = localStorage.getItem('username');
 
     const titleRef = useRef();
-    const periodRef = useRef();
-    const frequencyRef = useRef();
+    const dateRef = useRef();
+    
 
     const [noTitle, setNoTitle] = useState(false);
     const [noDifficulty, setNoDifficulty] = useState(false);
@@ -34,18 +34,12 @@ function AddGoal(props){
             username: currentName,
             title: titleRef.current.value,
             difficulty: click,
-            period: periodRef.current.value,
-            frequency: frequencyRef.current.value
+            date: dateRef.current.value.toString()
         }
 
         //await axios.post(`/${currentName}`, data);
         props.handler();
 
-    }
-    const [check, setCheck] = useState(false);
-
-    function checkHandler(){
-        setCheck(!check);
     }
    
 
@@ -83,26 +77,11 @@ function AddGoal(props){
 
                 {noDifficulty && <p className='error'>Please enter a difficulty</p>}
 
-                <div className="recur">
-                    <label className="label">Is this a recurring goal?</label>
-                    <input id="checkbox" type='checkbox' onClick={checkHandler}/>
-                   
-                    {check &&  
-                    <div>
-
-                        <div className= "length">
-
-                            <label className='label'>How many days will the goal repeat for?</label>
-                            <input id='period' type="number" ref={periodRef}/>
-                        </div>
-                        <div className= "length">
-                            <label className='label'>How often will the goal repeat (in days)?</label>
-                            <input id='frequency' type="number" ref={frequencyRef}/>
-                        </div>
-                    </div>
-                    }
-                   
+                <div className="finish-by">
+                    <label for="start">Complete Goal By: </label>
+                    <input ref = {dateRef} type="date" id="start" name="trip-start" min="2022-04-09" max="2030-12-31"></input>
                 </div>
+                
 
                 <div className='create-goal'>
                     <button onClick={submitGoal} id="submitButton">Create Goal!</button>

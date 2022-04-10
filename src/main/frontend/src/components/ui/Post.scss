@@ -1,3 +1,19 @@
+
+.super-cont{
+    display: flex;
+    width: 100%;
+}
+
+
+.cont{
+    display: flex;
+    width: 100%;
+}
+
+.dots{
+   margin: auto;
+}
+
 .post{
     background-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -6,6 +22,8 @@
     border-radius: 2px;
     text-align: left;
     margin: 0;
+    width: 100%;
+    
 }
 
 .post h1, h3{
@@ -51,7 +69,9 @@
 textarea{
     
     width: 99%;
+    border-color: grey;
     height: 2cm;
+    resize: none;
 }
 
 button{
@@ -63,6 +83,12 @@ button{
     padding-left: 90%;
 }
 
+@media screen and (max-width: 580px){
+    textarea{
+    
+        width: 98%;
+    }
+}
 
 @media screen and (max-width: 480px){
     .post .stats{
@@ -73,4 +99,10 @@ button{
     }
     
 
+}
+
+@media screen and (max-width: 950px){
+    .super-cont{
+        display: inline;
+    }
 }

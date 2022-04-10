@@ -1,0 +1,54 @@
+@import '../Variables.scss';
+
+
+.instr-top {
+    display: flex;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+    padding-left: 92%;
+    padding-top: 2%;
+}
+.opt-card{
+    font-family: var(--main-font);
+    width: 250px;
+    
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    border-radius: .95rem;
+    
+    text-align:center;
+    background: white;
+    
+
+}
+
+.opt-card button{
+    font-size: 120%;
+    font-family: var(--main-font);
+    background: rgb(245, 118, 118);
+    color: #ff0000;
+    width: 85%;
+    height: 1cm;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.opt-card #del-comment-button{
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 950px){
+    .opt-card{
+        position: fixed;
+    }
+
+}
+@media screen and (max-width: 950px){
+    .opt-card{
+    
+        margin-top: 20px;
+
+    }
+
+}

@@ -49,7 +49,7 @@ const GoalPage = () => {
     const [click, setClick] = useState(false);
 
     function handleClick(){
-        console.log("it should close");
+        
         setClick(!click);
     } 
 

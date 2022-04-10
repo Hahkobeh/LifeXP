@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import { UserContext }  from '../../UserContext';
 
 import Navbar from '../../Navbar';
@@ -31,6 +31,11 @@ const ManagePage = () => {
         setPants(id);
 
     }
+    const topicRef = useRef();
+
+    function handleChange(){
+        console.log("it should have changed to " + topicRef.current.value)
+    }
 
 
     return(
@@ -43,29 +48,48 @@ const ManagePage = () => {
             
             <div className='store-container'>
 
+                <ul className='selected-items'>
+                    <h1>Current Outfit</h1>
+                    <li>
+                        <div className="selected-item">
+                            <img src='' alt='Selected Hat'/>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="selected-item">
+                                <img src='' alt='Selected Shirt'/>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="selected-item">
+                            <img src='' alt='Selected Pants'/>
+                        </div>
+                    </li>
+                    
+
+
+                </ul>
+
                 <ul className='store-items'>
 
                     <li className='store-item'>
-                        <h1>Hats:</h1>
+                        <h1>Pirate Garments:</h1>
                         <div className = 'hat-items'>
 
                             <div className={hat === '0.0' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('0.0')}>
                                 <img src='' alt='Red Hat'/>
                             </div>
-                            <div className={hat === '0.1' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('0.1')}>
+                            <div className={hat === '0.1' ? 'shirt-item selected' : 'hat-item'} onClick={() => changeHat('0.1')}>
                                 <img src='' alt='Green Hat' />
                             </div>
-                            <div className={hat === '0.2' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('0.2')}>
+                            <div className={hat === '0.2' ? 'pants-item selected' : 'hat-item'} onClick={() => changeHat('0.2')}>
                                 <img src='' alt='Blue Hat'/>
-                            </div>
-                            <div className={hat === '0.3' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('0.3')}>
-                                <img src='' alt='Yellow Hat'/>
                             </div>
                     
                         </div>
                     </li>
                     <li className='store-item'>
-                        <h1>Shirts:</h1>
+                        <h1>Burglar Garments:</h1>
                         <div className = 'shirt-items'>
                             <div className={shirt === '1.0' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeShirt('1.0')}>
                                 <img src='' alt='Red shirt'/>
@@ -76,13 +100,11 @@ const ManagePage = () => {
                             <div className={shirt === '1.2' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeShirt('1.2')}>
                                 <img src='' alt='Blue shirt'/>
                             </div>
-                            <div className={shirt === '1.3' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeShirt('1.3')}>
-                                <img src='' alt='Yellow shirt'/>
-                            </div>
+                            
                         </div>
                     </li>
                     <li className='store-item'>
-                        <h1>Pants:</h1>
+                        <h1>Knight Garments:</h1>
                         <div className = 'pants-items'>
                             <div className={pants === '2.0' ? 'pants-item selected' : 'pants-item'} onClick={() => changePants('2.0')}>
                                 <img src='' alt='Red pants'/>
@@ -93,9 +115,7 @@ const ManagePage = () => {
                             <div className={pants === '2.2' ? 'pants-item selected' : 'pants-item'} onClick={() => changePants('2.2')}>
                                 <img src='' alt='Blue pants'/>
                             </div>
-                            <div className={pants === '2.3' ? 'pants-item selected' : 'pants-item'} onClick={() => changePants('2.3')}>
-                                <img src='' alt='Yellow pants'/>
-                            </div>
+                            
                         </div>
                     </li>
                 </ul>

@@ -2,7 +2,7 @@
     list-style: none;
     padding-left: 0;
     width: 30vw;
-    margin: 14vh auto;
+    margin: 3vh auto;
 }
 
 .post-list-item{
@@ -40,3 +40,25 @@
     
 
 }
+
+.post-page-dropdown{
+    
+    width: 27vw;
+    margin: -2vh auto;
+    padding-right: 3vw;
+    text-align: center;
+    font-family: var(--main-font);
+    min-width: 300px;
+}
+.post-topics-label{
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+select{
+    width: 10em;
+    text-align: center;
+    height: 0.8cm;
+    font-size: 1.1em;
+}
+

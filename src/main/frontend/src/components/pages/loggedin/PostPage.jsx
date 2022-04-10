@@ -1,10 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import { UserContext }  from '../../UserContext';
 import Navbar from '../../Navbar';
 import {BsPlusCircle} from 'react-icons/bs';
-
+import Backdrop from './Backdrop';
+import AddPost from './AddPost';
 import Post from '../../ui/Post';
 import './PostPage.scss';
+import AddGoal from './AddGoal';
 
 var posts = [
     {   id: 1,
@@ -60,17 +62,42 @@ var posts = [
 
 const PostPage = () =>{
 
+    const [click, setClick] = useState(false);
+    const topicRef = useRef();
+
+    function handleClick(){
+        
+        setClick(!click);
+    } 
+
+    function handleChange(){
+        console.log("it should have changed to " + topicRef.current.value)
+    }
+
     
     return(
         <div className='all-posts'>
             <Navbar/>
 
+            {click && <AddPost handler={handleClick}/>}
+            {click && <Backdrop onCancel={handleClick}/>}
+
             <ul className="i-hate-having-to-add-this">
 
-                    <div className='add' >
+                    <div className='add' onClick={handleClick}>
                         <BsPlusCircle size={40}/>
                     </div>
             </ul>
+
+            <div className='post-page-dropdown'>
+                <label className='post-topics-label' for="post-topics">Topics:  </label>
+                <select name="post-topics" onChange={handleChange} ref={topicRef}>
+                    <option value="stories">Stories</option>
+                    <option value="reviews">Reviews</option>
+                    <option value="help">Help</option>
+                </select>
+                
+            </div>
 
             <ul className ='post-list'>
             {posts.map(function(posts, index){
