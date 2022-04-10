@@ -9,8 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Item {
     @Id
     private String id;
-    private int cost;
-    private int requiredLevel;
-    private String shopId;
+    private String type; //hat
+    private String shopName;//pirate
 
 }

@@ -70,5 +70,18 @@ public class DiscussionController {
         return commentService.getComments(postId);
     }
 
+    //DELETE
+    @DeleteMapping("/delete-post/{id}")
+    @ResponseBody
+    public boolean deletePost(@PathVariable String id){
+        commentService.deleteCommmentsByPostId(id);
+        return postService.deletePost(id);
+    }
+
+    @DeleteMapping("/delete-comment/{id}")
+    @ResponseBody
+    public boolean deleteComment(@PathVariable String id){
+        return commentService.deleteComment(id);
+    }
 
 }
