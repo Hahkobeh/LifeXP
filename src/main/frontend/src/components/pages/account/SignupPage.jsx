@@ -64,12 +64,13 @@ function SignupPage(){
         }
 
         let returnValue
-        let request = 'http://localhost:8081/user/api/v1/register'
+        let request = 'http://localhost:8080/api/user/register'
 
         let userData = {
             username: emailRef.current.value,
             password: passwordRef.current.value
         }
+
         await axios.post(request, userData)
             .then(res => {
                     console.log(res.data.toString() + 'happened!')
@@ -79,7 +80,7 @@ function SignupPage(){
             )
         console.log(returnValue)
         if(returnValue === true) {
-            navigate('/login')
+            navigate('/signin')
         }else{
             setUserExists(true);
             return

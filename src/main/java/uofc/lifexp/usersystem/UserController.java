@@ -30,6 +30,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @ResponseBody
     public boolean register(@RequestBody UserForm userForm){
         System.out.println("Register request received");
         return userService.createUser(userForm.getUsername(),userForm.getPassword());

@@ -5,7 +5,7 @@ import logo from '../../images/logo.svg';
 import { login } from '../../TrialUser';
 import { UserContext }  from '../../UserContext';
 import { TaskContext }  from '../../TaskContext';
-
+import axios from "axios";
 import './LoginPage.scss';
 
 function LoginPage(){
@@ -58,9 +58,9 @@ function LoginPage(){
 
         try{
 
-              /*let usernameValue;
+            let usernameValue;
             let idValue;
-            let request = 'http://localhost:8081/user/api/v1/login'
+            let request = 'http://localhost:8080/api/user/login'
 
             let userData = {
                 username: emailRef.current.value,
@@ -82,11 +82,12 @@ function LoginPage(){
             }
 
             localStorage.setItem('username', usernameValue);
-            localStorage.setItem('id', idValue);*/
-            const user = await login();
-            setUser(user);
-            setTask(user['tasks']);
-            navigate('/profile');
+            localStorage.setItem('id', idValue);
+            //console.log(localStorage.getItem('username'));
+            //const user = await login();
+            //setUser(user);
+            //setTask(user['tasks']);
+            navigate('/manage');
             
         }catch(err){
             console.log(err);
