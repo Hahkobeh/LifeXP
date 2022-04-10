@@ -25,32 +25,45 @@ function Card(props){
         await axios.delete(`http://localhost:8080/api/goal/delete/${props.id}`)
         props.reset();
     }
-    return<div className={props.status === 2 ? "card overdue": "card"}>
-
-        <div className="card-cont">
-            <div className="goal-info">
-                {props.children}
+    if(props.status === 1){
+        return<div className={props.status === 2 ? "card overdue": "card"}>
+            <div className="card-cont">
+                <div className="goal-info">
+                    {props.children}
+                </div>
             </div>
-            
-            
-            <div className="options">
-                <li className="options-item">
-                    <button className='checkmark' onClick={completedHandler}>
-                        <GiCheckMark size={30} style={{color: 'green'}}/>
-                    </button>
-                </li>
-                <li className="options-item">
-                    <button className="x-mark" onClick={cancelledHandler}>
-                        <GiCancel size={30} style={{color: 'red'}}/>
-                    </button>
-                </li>
-                
 
+
+        </div>
+    }else{
+        return<div className={props.status === 2 ? "card overdue": "card"}>
+
+            <div className="card-cont">
+                <div className="goal-info">
+                    {props.children}
+                </div>
+                
+                
+                <div className="options">
+                    <li className="options-item">
+                        <button className='checkmark' onClick={completedHandler}>
+                            <GiCheckMark size={30} style={{color: 'green'}}/>
+                        </button>
+                    </li>
+                    <li className="options-item">
+                        <button className="x-mark" onClick={cancelledHandler}>
+                            <GiCancel size={30} style={{color: 'red'}}/>
+                        </button>
+                    </li>
+                    
+
+                </div>
+                
             </div>
             
         </div>
-        
-    </div>
+    }
+    
 }
 
 export default Card;

@@ -25,7 +25,6 @@ function GoalPage(){
     
     const [currentC, setCurrentC] = useState([]);
     const [completedC, setCompletedC] = useState([]);
-    const [overdueC, setOverdueC] = useState([]);
 
     useEffect( ()=> {
         SetUp();
@@ -40,15 +39,12 @@ function GoalPage(){
                 //let overdue = res.data.filter( e => e.status == 2);
                 //let active = res.data.filter( e => e.status == 0);
                 b= res.data;
-                setCurrentC(res.data);
                 //setCompletedC(completed);
                 //setOverdueC(overdue);
                 
         });
         const c = b.filter(b => b.status === 1);
         const d = b.filter(b => b.status !== 1);
-        console.log(c);
-        console.log(d);
         setCompletedC(c);
         setCurrentC(d);
     }
@@ -94,6 +90,19 @@ function GoalPage(){
                             </Card>
                             
                             </li>;
+                           
+                    })}
+                </ul>
+                
+                <h1 className="goal-header">Completed Goals</h1>
+                <ul className='task-list'>
+                    {completedC.map(function(completedC, index){
+                        return <li className='task-list-item' key={index}>
+                            <Card id={completedC.id} status={completedC.status} reset={SetUp}>
+                              <h1 className='task-title'>{completedC.title} (Finished)</h1>
+                            </Card>
+                            
+                        </li>;
                            
                     })}
                 </ul>
