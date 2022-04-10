@@ -20,8 +20,9 @@ public class GoalService {
         Date date = new Date();
         List<Goal> goals = goalRepository.findAllByUsername(username);
         for(Goal goal:goals){
-            if(goal.getDue().before(date)){
+            if(goal.getDue().before(date) && goal.getStatus() == 0){
                 goal.setStatus(2);
+                goalRepository.save(goal);
             }
         }
         return goals;
@@ -42,12 +43,14 @@ public class GoalService {
         return true;
     }
 
-    public void completeGoal(String id) {
+    public Goal completeGoal(String id) {
         Optional<Goal> goal = goalRepository.findById(id);
         if(goal.isPresent()){
             Goal goal1 = goal.get();
             goal1.setStatus(1);
             goalRepository.save(goal1);
+            return goal1;
         }
+        return null;
     }
 }

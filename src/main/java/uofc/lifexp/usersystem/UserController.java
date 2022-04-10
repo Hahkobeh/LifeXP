@@ -44,11 +44,12 @@ public class UserController {
         return friendService.getFriends(username);
     }
 
-    @PutMapping("/complete")
-    @ResponseBody
-    public boolean completeGoal(@RequestBody Goal goal){
-        return userService.giveRewards(goal);
 
+    public boolean completeGoal(Goal goal){
+        if(goal != null){
+            return userService.giveRewards(goal);
+        }
+        return false;
     }
 
 

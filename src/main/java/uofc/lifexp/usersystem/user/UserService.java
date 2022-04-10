@@ -78,13 +78,18 @@ public class UserService {
     }
 
     public boolean giveRewards(Goal goal){
+        System.out.println(goal.getUsername());
         User user = userRepository.findByUsername(goal.getUsername());
+        if(user == null || goal.getStatus() == 1){
+            return false;
+        }
         int rewardConstant = goal.getDifficulty() * 10;
         if(goal.getStatus() == 2){
             rewardConstant = (int) (rewardConstant * 0.6);
         }
         user.setExperience(user.getExperience() + (rewardConstant * 10));
         user.setGold(user.getGold() + rewardConstant);
+        userRepository.save(user);
         return true;
     }
 

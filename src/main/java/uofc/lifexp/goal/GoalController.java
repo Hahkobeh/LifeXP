@@ -16,9 +16,11 @@ import java.util.List;
 @CrossOrigin(origins = {"http://localhost:3000"})
 public class GoalController {
     private final GoalService goalService;
+    private final UserController userController;
     @Autowired
-    public GoalController(GoalService goalService){
+    public GoalController(GoalService goalService, UserController userController){
         this.goalService = goalService;
+        this.userController = userController;
     }
 
     @GetMapping("/get-goals/{username}")
@@ -42,8 +44,7 @@ public class GoalController {
     @PutMapping("/complete/{id}")
     @ResponseBody
     public boolean completeGoal(@PathVariable String id){
-        goalService.completeGoal(id);
-        return true;
+        return userController.completeGoal(goalService.completeGoal(id));
     }
 
     @PostMapping("/test")
