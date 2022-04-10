@@ -9,5 +9,5 @@ public class GoalForm {
     private String username;
     private String body;
     private String date;
-    private int rating;
+    private int difficulty;
 }
