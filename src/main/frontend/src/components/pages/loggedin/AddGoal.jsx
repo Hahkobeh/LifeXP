@@ -17,8 +17,8 @@ function AddGoal(props){
     const [click, setClick] = useState(0);
 
 
-    async function submitGoal(){
-        
+    async function submitGoal(e){
+        e.preventDefault();
         setNoTitle(false);
         setNoDifficulty(false);
 
@@ -37,7 +37,7 @@ function AddGoal(props){
             date: dateRef.current.value.toString()
         }
 
-        //await axios.post(`/${currentName}`, data);
+        await axios.post(`http://localhost:8080/api/goal/create-goal`, data);
         props.handler();
 
     }
