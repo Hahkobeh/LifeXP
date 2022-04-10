@@ -9,6 +9,8 @@ import { UserContext }  from './UserContext';
 
 const Navbar = () => {
 
+    const currentName = localStorage.getItem('username');
+
     const {user,  setUser} = useContext(UserContext);
 
     const [click, setClick] = useState(false);
@@ -20,6 +22,7 @@ const Navbar = () => {
     let navigate = useNavigate();
 
     const logoutHandler = () =>{
+        localStorage.clear();
         closeMenu();
         setUser(null);
         navigate('/');
@@ -40,7 +43,7 @@ const Navbar = () => {
         navigate('/goals');
     }
 
-    if(!user){
+    if(!currentName){
         return (
      
             <div className="header">

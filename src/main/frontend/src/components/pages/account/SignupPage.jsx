@@ -100,8 +100,8 @@ function SignupPage(){
             
             <form className = "form" onSubmit = {submitHandler}>
                 <div className="control">
-                    <label className="label" htmlFor="email">Enter an email address:</label>
-                    <input type='text' id='email' placeholder= 'e.g johnysins@gmail.com' oninvalid="" ref={emailRef} />
+                    <label className="label" htmlFor="email">Enter a username:</label>
+                    <input type='text' id='email' placeholder= 'e.g jacob24' oninvalid="" ref={emailRef} />
                     {emailError && <p className="error"> You need to enter an email.</p>}
                    
                 </div>

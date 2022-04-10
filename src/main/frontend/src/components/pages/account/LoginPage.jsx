@@ -109,8 +109,8 @@ function LoginPage(){
               <hr/>
                 <div className ="control">
                  
-                    <input placeholder="Email" type ='text' id='email' ref={emailRef}/>
-                    {emailError && <p className='error'> You need to enter an email.</p>}
+                    <input placeholder="Username" type ='text' id='email' ref={emailRef}/>
+                    {emailError && <p className='error'> You need to enter a username.</p>}
                   
                 </div>
                 <div className ="control">
@@ -123,7 +123,7 @@ function LoginPage(){
                 <div className ="control">
                     <input value= 'Log In' type='submit' id="submitButton"/>
                 </div>
-                <Link to='/password-reset' className="pwPage"  target="_blank" rel="noopener noreferrer">Forgot your password?</Link>
+                
           </form>
           
           <hr/>
