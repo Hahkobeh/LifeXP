@@ -20,7 +20,7 @@ public class GoalService {
         Date date = new Date();
         List<Goal> goals = goalRepository.findAllByUsername(username);
         for(Goal goal:goals){
-            if(goal.getDue().after(date)){
+            if(goal.getDue().before(date)){
                 goal.setStatus(2);
             }
         }
