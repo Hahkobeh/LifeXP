@@ -44,9 +44,6 @@ public class UserController {
     }
 
 
-    public User getUser(String id){
-        return userService.getUser(id);
-    }
 
 
 }
