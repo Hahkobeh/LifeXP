@@ -2,7 +2,9 @@ package uofc.lifexp.itemsystem.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uofc.lifexp.itemsystem.inventory.Inventory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,6 +18,13 @@ public class ItemService {
     public List<Item> getItems(){
         return itemRepository.findAll();
     }
+    public List<Item> getItems(List<Inventory> inventoryList){
+        List<Item> items = new ArrayList<>();
+        for (Inventory i:inventoryList) {
+            items.add(itemRepository.findById(i.getItemId()).get());
+        }
+        return items;
+    }
 
     public void createItems(String shopName){
         itemRepository.save(new Item("hat", shopName));
@@ -28,5 +37,15 @@ public class ItemService {
 
     public String getType(String id){
         return itemRepository.findById(id).get().getType();
+    }
+
+    public String getOldItem(List<Inventory> inventoryList, String type){
+        for(Inventory inventory: inventoryList){
+            Item temp = itemRepository.findById(inventory.getItemId()).get();
+            if(temp.getType().equals(type)){
+                return temp.getId();
+            }
+        }
+        return null;
     }
 }

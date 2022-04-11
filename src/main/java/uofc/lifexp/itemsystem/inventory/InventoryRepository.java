@@ -9,4 +9,5 @@ import java.util.List;
 public interface InventoryRepository extends MongoRepository<Inventory,String> {
     List<Inventory> getAllByUsername(String username);
     Inventory findByItemIdAndUsername(String itemId, String username);
+    List<Inventory> getAllByUsernameAndEquipped(String username, boolean equipped);
 }

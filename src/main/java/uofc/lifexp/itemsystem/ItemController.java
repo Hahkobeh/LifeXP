@@ -74,14 +74,26 @@ public class ItemController {
 
     }
 
-    /*@PutMapping("/equip-item/{username}/{itemId}")
+    @PutMapping("/equip-item/{username}/{itemId}")
     @ResponseBody
     public boolean equipItem(@PathVariable String username, @PathVariable String itemId){
         String type = itemService.getType(itemId);
-        inventoryService.unequip(type,username);
+        String oldId = itemService.getOldItem(inventoryService.getEquipped(username), type);
+        if(oldId != null) {
+            System.out.println(oldId);
+            inventoryService.unequip(oldId,username);
+        }
         inventoryService.equip(itemId,username);
+        return true;
 
-    }*/
+    }
+
+    @GetMapping("/get-equipped/{username}")
+    @ResponseBody
+    public List<Item> getEquipped(@PathVariable String username){
+        List<Inventory> inventoryList =  inventoryService.getEquipped(username);
+        return itemService.getItems(inventoryList);
+    }
 
 
 }
