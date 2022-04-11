@@ -80,7 +80,7 @@ public class UserService {
     public boolean giveRewards(Goal goal){
         System.out.println(goal.getUsername());
         User user = userRepository.findByUsername(goal.getUsername());
-        if(user == null || goal.getStatus() == 1){
+        if(user == null){
             return false;
         }
         int rewardConstant = goal.getDifficulty() * 10;
@@ -90,6 +90,7 @@ public class UserService {
         user.setExperience(user.getExperience() + (rewardConstant * 10));
         user.setGold(user.getGold() + rewardConstant);
         userRepository.save(user);
+        System.out.println("hello");
         return true;
     }
 
