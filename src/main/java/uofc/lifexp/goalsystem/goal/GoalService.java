@@ -1,4 +1,4 @@
-package uofc.lifexp.goal.goal;
+package uofc.lifexp.goalsystem.goal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

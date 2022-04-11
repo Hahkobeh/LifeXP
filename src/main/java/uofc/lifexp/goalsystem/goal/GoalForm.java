@@ -1,4 +1,4 @@
-package uofc.lifexp.goal.goal;
+package uofc.lifexp.goalsystem.goal;
 
 import lombok.Data;
 

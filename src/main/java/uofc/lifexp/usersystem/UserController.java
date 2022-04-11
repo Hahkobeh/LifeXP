@@ -3,7 +3,7 @@ package uofc.lifexp.usersystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import uofc.lifexp.goal.goal.Goal;
+import uofc.lifexp.goalsystem.goal.Goal;
 import uofc.lifexp.usersystem.friend.FriendService;
 import uofc.lifexp.usersystem.user.User;
 import uofc.lifexp.usersystem.user.UserForm;
