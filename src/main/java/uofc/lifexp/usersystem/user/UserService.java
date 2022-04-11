@@ -109,4 +109,11 @@ public class UserService {
         return false;
     }
 
+    public boolean checkLevel(String username, int level) {
+        User user = userRepository.findByUsername(username);
+        if(user != null){
+            return user.getExperience() >= level;
+        }
+        return false;
+    }
 }

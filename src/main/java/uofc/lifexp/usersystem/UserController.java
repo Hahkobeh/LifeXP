@@ -63,5 +63,7 @@ public class UserController {
     }
 
 
-
+    public boolean requiredLevel(String username, int level) {
+        return userService.checkLevel(username, level);
+    }
 }

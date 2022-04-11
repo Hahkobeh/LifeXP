@@ -62,16 +62,26 @@ public class ItemController {
     @PostMapping("/buy-item/{itemId}/{username}")
     @ResponseBody
     public boolean buyItem(@PathVariable String itemId, @PathVariable String username){
-
-        if(userController.pay(username,shopService.getPrice(itemService.getShopName(itemId)))) {
-            inventoryService.addInventory(itemId, username);
-            return true;
+        int price = shopService.getPrice(itemService.getShopName(itemId));
+        if(userController.requiredLevel(username, price * 10)) {
+            if (userController.pay(username, price)) {
+                inventoryService.addInventory(itemId, username);
+                return true;
+            }
         }
         return false;
 
 
     }
 
+    /*@PutMapping("/equip-item/{username}/{itemId}")
+    @ResponseBody
+    public boolean equipItem(@PathVariable String username, @PathVariable String itemId){
+        String type = itemService.getType(itemId);
+        inventoryService.unequip(type,username);
+        inventoryService.equip(itemId,username);
+
+    }*/
 
 
 }
