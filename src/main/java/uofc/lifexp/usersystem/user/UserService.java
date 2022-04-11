@@ -94,5 +94,19 @@ public class UserService {
     }
 
 
+    public boolean payCost(String username, int cost){
+        User user = userRepository.findByUsername(username);
+        if(user != null){
+            if(user.getGold() < cost){
+                return false;
+            }else{
+                user.setGold(user.getGold() - cost);
+                userRepository.save(user);
+                return true;
+
+            }
+        }
+        return false;
+    }
 
 }
