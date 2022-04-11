@@ -61,6 +61,7 @@ function LoginPage(){
             let usernameValue;
             let idValue;
             let type;
+            let lvl;
             let request = 'http://localhost:8080/api/user/login'
 
             let userData = {

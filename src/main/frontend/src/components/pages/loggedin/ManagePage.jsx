@@ -28,6 +28,7 @@ import pantsKnight from "../../images/armour.png";
 const ManagePage = () => {
 
     const currentName = localStorage.getItem('username');
+    const id = localStorage.getItem('id');
 
     let shops = [];
     let items = [];
@@ -35,10 +36,16 @@ const ManagePage = () => {
 
     const [itemList, setItemList] = useState([]);
     const [shopList, setShopList] = useState([]);
-    
+    const [user, setUser] = useState([]);
 
     async function SetUp(){
         
+        await axios.get(`http://localhost:8080/api/user/get-user/${id}`)
+            .then( res => {
+                console.log(res.data)
+                setUser(res.data);
+            })
+        console.log(user.experience);
         await axios.get(`http://localhost:8080/api/item/get-shops`)
             .then( res =>{
                 shops = res.data;
@@ -58,12 +65,12 @@ const ManagePage = () => {
                 inventory = res.data;
             })
         
-        //console.log(inventory);
+        console.log(inventory);
         items.forEach( (item) => {
             
             item["unlocked"] = false;
             for(let i = 0; i < inventory.length; i++){
-                if(item.id === inventory[i].id){
+                if(item.id === inventory[i].itemId){
                     item["unlocked"] = true;
                     item["equiped"] = inventory[i].equipped;
                     break;
@@ -243,7 +250,8 @@ const ManagePage = () => {
                                             || (itemList.type === 'pants' && itemList.shopName === pants))) ? "selected" : 'not-selected'}
                                             onClick= {() => changeSelected(itemList.unlocked, itemList.image , itemList.shopName + ' ' + itemList.id + ' ' + itemList.type )} >
                                             {itemList.unlocked === true && <img src={itemList.image} alt= { itemList.shopName + ' ' + itemList.type}/>}
-                                            {itemList.unlocked === false && <p className = 'locked'>Locked</p>}
+                                            {itemList.unlocked === false && <p className = 'locked'>Locked ({itemList.cost} gold)</p>}
+                                            {itemList.unlocked === false && user.experience <= itemList.requiredXp && <p className = 'locked'>Level Req. {itemList.requiredXp}</p>}
                                         </div>
                                     })}
                                 </div>

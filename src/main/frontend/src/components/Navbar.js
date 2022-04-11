@@ -1,17 +1,16 @@
-import React, {useState , useContext} from 'react';
+import React, {useState , useEffect, useContext} from 'react';
 import { useNavigate} from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+
+import axios from "axios";
 
 import './Navbar.scss';
 import logo from './images/logo.svg';
 
-import { UserContext }  from './UserContext';
 
 const Navbar = () => {
 
     const currentName = localStorage.getItem('username');
-
-    const {user,  setUser} = useContext(UserContext);
 
     const [click, setClick] = useState(false);
 
@@ -20,11 +19,19 @@ const Navbar = () => {
     const closeMenu = () => setClick(false);
 
     let navigate = useNavigate();
+    
+    useEffect( ()=> {
+        userInfo();
+    }, []);
+    
+    
+    async function userInfo(){
+
+    }
 
     const logoutHandler = () =>{
         localStorage.clear();
         closeMenu();
-        setUser(null);
         navigate('/');
     }
 
