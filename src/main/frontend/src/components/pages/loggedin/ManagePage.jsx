@@ -170,14 +170,23 @@ const ManagePage = () => {
     const [pants, setPants] = useState(-1);
 
 
+    async function buyItem(id){
+        
+        await axios.post(`http://localhost:8080/api/item/buy-item/${id}/${currentName}`)
+        SetUp();
+    }
+
     function changeSelected(cont, img, str){
 
-        if(cont === false){
-            return
-        }
+       
         console.log(str);
         const b = str.split(' ')[0];
         const s = str.split(' ')[1];
+
+        if(cont === false){
+            buyItem(s);
+            return
+        }
 
         if(str.includes("hat")){
             changeHat(img, s);
@@ -209,9 +218,6 @@ const ManagePage = () => {
 
     return(
         
-       
-
-       
         <div>
             <Navbar/>
             
@@ -251,7 +257,7 @@ const ManagePage = () => {
                                             onClick= {() => changeSelected(itemList.unlocked, itemList.image , itemList.shopName + ' ' + itemList.id + ' ' + itemList.type )} >
                                             {itemList.unlocked === true && <img src={itemList.image} alt= { itemList.shopName + ' ' + itemList.type}/>}
                                             {itemList.unlocked === false && <p className = 'locked'>Locked ({itemList.cost} gold)</p>}
-                                            {itemList.unlocked === false && user.experience <= itemList.requiredXp && <p className = 'locked'>Level Req. {itemList.requiredXp}</p>}
+                                            {itemList.unlocked === false && user.experience < itemList.requiredXp && <p className = 'locked'>Level Req. {itemList.requiredXp}</p>}
                                         </div>
                                     })}
                                 </div>
@@ -260,76 +266,6 @@ const ManagePage = () => {
                     })}
                 </ul>
                 
-                
-                
-
-
-               {/* <ul className='store-items'>
-
-                <li className='store-item'>
-                        <h1>Pirate Garments:</h1>
-                        <div className = 'hat-items'>
-
-                            <div className={hat === 'Pirate' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('../../images/pirate-hat.png')}>
-                                <img src={defaultHat} alt='Pirate Hat'/>
-                            </div>
-                            <div className={shirt === 'Pirate' ? 'shirt-item selected' : 'hat-item'} onClick={() => changeShirt('Pirate')}>
-                                <img src={defaultShirt} alt='Pirate Shirt' />
-                            </div>
-                            <div className={pants === 'Pirate' ? 'pants-item selected' : 'hat-item'} onClick={() => changePants('Pirate')}>
-                                <img src={defaultPants} alt='Pirate Pants'/>
-                            </div>
-                    
-                        </div>
-                    </li>
-
-                    <li className='store-item'>
-                        <h1>Pirate Garments:</h1>
-                        <div className = 'hat-items'>
-
-                            <div className={hat === 'Pirate' ? 'hat-item selected' : 'hat-item'} onClick={() => changeHat('../../images/pirate-hat.png')}>
-                                <img src={pirateHat} alt='Pirate Hat'/>
-                            </div>
-                            <div className={shirt === 'Pirate' ? 'shirt-item selected' : 'hat-item'} onClick={() => changeShirt('Pirate')}>
-                                <img src={pirateShirt} alt='Pirate Shirt' />
-                            </div>
-                            <div className={pants === 'Pirate' ? 'pants-item selected' : 'hat-item'} onClick={() => changePants('Pirate')}>
-                                <img src={piratePants} alt='Pirate Pants'/>
-                            </div>
-                    
-                        </div>
-                    </li>
-                    <li className='store-item'>
-                        <h1>Ninja Garments:</h1>
-                        <div className = 'shirt-items'>
-                            <div className={hat === 'Ninja' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeHat('Ninja')}>
-                                <img src={ninjaHat} alt='Ninja Hat'/>
-                            </div>
-                            <div className={shirt === 'Ninja' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changeShirt('Ninja')}>
-                                <img src={ninjaShirt} alt='Ninja Shirt'/>
-                            </div>
-                            <div className={pants === 'Ninja' ? 'shirt-item selected' : 'shirt-item'} onClick={() => changePants('Ninja')}>
-                                <img src={ninjaPants} alt='Ninja Pants'/>
-                            </div>
-                            
-                        </div>
-                    </li>
-                    <li className='store-item'>
-                        <h1>Knight Garments:</h1>
-                        <div className = 'pants-items'>
-                            <div className={hat === 'Knight' ? 'pants-item selected' : 'pants-item'} onClick={() => changeHat('Knight')}>
-                                <img src={knightHat} alt='Knight head'/>
-                            </div>
-                            <div className={pants === 'Knight' ? 'pants-item selected' : 'pants-item'} onClick={() => changeShirt('Knight')}>
-                                <img src={knightShirt} alt='Knight shirt'/>
-                            </div>
-                            <div className={pants === 'Knight' ? 'pants-item selected' : 'pants-item'} onClick={() => changePants('Knight')}>
-                                <img src={knightPants} alt='Knight pants'/>
-                            </div>
-                            
-                        </div>
-                    </li>
-                </ul>*/}
             </div>
            
         </div>
