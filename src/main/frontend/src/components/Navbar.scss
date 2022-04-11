@@ -79,6 +79,69 @@
   display: none;
 }
 
+.profile-things, .avatar{
+  list-style: none;
+  font-family: var(--main-font);
+  color: var(--nav-link-color);
+  padding: 0;
+  margin: 0;
+}
+
+.profile-things h1{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.prof{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding-top: 10px;
+  border: 2px solid red;
+}
+
+.avatar{
+  margin-top: -10px;
+}
+
+.avatar-piece{
+    height: 30px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 1355px){
+
+  .avatar-piece{
+    height: 25px;
+  }
+
+  .profile-things h1{
+    font-size: 0.8rem;
+  }
+
+}
+
+@media screen and (max-width: 1261px){
+
+  .avatar-piece{
+    height: 25px;
+  }
+
+  .profile-things h1{
+    font-size: 0.6rem;
+  }
+
+  .prof{
+    margin-top: 12px;
+    grid-gap: 20px;
+  }
+}
+
 @media screen and (max-width:900px){
 
   .bars{
@@ -103,23 +166,18 @@
 
   }
 
+  .profile-things h1{
+    font-size: 0.8rem;
+  }
+
+  .prof{
+    margin-top: 0px;
+    grid-gap: 20px;
+  }
+
   .nav-item{
     margin: 1.5rem 0;
     align-self: center;
   }
-}
 
-
-.profile-things{
-  list-style: none;
-  font-family: var(--main-font);
-  color: var(--nav-link-color);
-  padding: 0;
-  margin: 0;
-}
-
-.profile-things h1{
-    font-size: 1rem;
-    padding: 0;
-    margin: 0;
 }

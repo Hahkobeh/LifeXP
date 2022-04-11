@@ -30,6 +30,10 @@ const Navbar = () => {
     const currentName = localStorage.getItem('username');
     const id = localStorage.getItem('id');
 
+    const [hat, setHat] = useState();
+    const [body , setBody] = useState();
+    const [legs, setLegs] = useState();
+
     const [click, setClick] = useState(false);
     const [user, setUser] = useState([]);
 
@@ -38,6 +42,8 @@ const Navbar = () => {
     const closeMenu = () => setClick(false);
 
     let navigate = useNavigate();
+
+    let equip = [];
     
     useEffect( ()=> {
         userInfo();
@@ -50,6 +56,48 @@ const Navbar = () => {
                 console.log(res.data)
                 setUser(res.data);
             })
+        
+        await axios.get(`http://localhost:8080/api/item/get-equipped/${currentName}`)
+            .then( res => {
+                console.log(res.data)
+                equip = res.data;
+            })
+
+            equip.forEach( (f) => {
+                console.log(f);
+                if(f.type === 'hat'){
+                    if(f.shopName === "Default"){
+                        setHat(hatDefault);
+                    }else if(f.shopName === "Pirate"){
+                        setHat(hatPirate);
+                    }else if(f.shopName === "Ninja"){
+                        setHat(hatNinja);
+                    }else{
+                        setHat(hatKnight);
+                    }
+                    
+                }else if(f.type === 'shirt'){
+                    if(f.shopName === "Default"){
+                        setBody(shirtDefault);
+                    }else if(f.shopName === "Pirate"){
+                        setBody(shirtPirate);
+                    }else if(f.shopName === "Ninja"){
+                        setBody(shirtNinja);
+                    }else{
+                        setBody(shirtKnight);
+                    }
+                }else{
+                    if(f.shopName === "Default"){
+                        setLegs(pantsDefault);
+                    }else if(f.shopName === "Pirate"){
+                        setLegs(pantsPirate);
+                    }else if(f.shopName === "Ninja"){
+                        setLegs(pantsNinja);
+                    }else{
+                        setLegs(pantsKnight);
+                    }
+                }
+        })
     }
 
     const logoutHandler = () =>{
@@ -108,12 +156,29 @@ const Navbar = () => {
         return(
             <div className="header">
                 <nav className="navbar">
-    
-                   
+
                     <img src={logo} className = 'logo'/>
 
-                    <div>
-                        
+                    <div className = "prof">
+                        <ul className='avatar'>
+                            <li>
+                                <div className="avatar-piece">
+                                    <img src={hat} alt='Selected Hat'/>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="avatar-piece">
+                                        <img src={body} alt='Selected Shirt'/>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="avatar-piece">
+                                    <img src={legs} alt='Selected Pants'/>
+                                </div>
+                            </li>
+                    
+
+                        </ul>
                         <ul className= 'profile-things'>
                             <li>
                                 <h1>{currentName}</h1> 
