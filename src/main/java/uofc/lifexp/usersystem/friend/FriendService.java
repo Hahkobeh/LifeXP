@@ -30,4 +30,9 @@ public class FriendService {
         return friendList;
     }
 
+    public void addFriend(String username, String otherUsername){
+        Friend friend = new Friend(username, otherUsername);
+        friendRepository.save(friend);
+    }
+
 }

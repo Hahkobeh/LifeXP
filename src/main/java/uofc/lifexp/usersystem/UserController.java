@@ -44,6 +44,13 @@ public class UserController {
         return friendService.getFriends(username);
     }
 
+    @PostMapping("/addFriend/{username1}/{username2}")
+    @ResponseBody
+    public boolean addFriend(@PathVariable String username1, @PathVariable String username2){
+        friendService.addFriend(username1,username2);
+        return true;
+    }
+
 
     public boolean completeGoal(Goal goal){
         if(goal != null){
