@@ -163,24 +163,27 @@ const ManagePage = () => {
     const [pants, setPants] = useState(-1);
 
 
-    function changeSelected(str){
+    function changeSelected(cont, img, str){
 
+        if(cont === false){
+            return
+        }
         console.log(str);
         const b = str.split(' ')[0];
         const s = str.split(' ')[1];
 
         if(str.includes("hat")){
-            changeHat(b, s);
+            changeHat(img, s);
         }else if(str.includes("shirt")){
-            changeShirt(b, s);
+            changeShirt(img, s);
         }else{
-            changePants(b, s);
+            changePants(img, s);
         }
         
     }
     function changeHat(stor, id){
         //change img src for Hat
-        console.log(id);
+        
         setHat(stor);
     }
     function changeShirt(stor, id){
@@ -216,12 +219,12 @@ const ManagePage = () => {
                     </li>
                     <li>
                         <div className="selected-item">
-                                <img src='' alt='Selected Shirt'/>
+                                <img src={shirt} alt='Selected Shirt'/>
                         </div>
                     </li>
                     <li>
                         <div className="selected-item">
-                            <img src='' alt='Selected Pants'/>
+                            <img src={pants} alt='Selected Pants'/>
                         </div>
                     </li>
                 
@@ -238,7 +241,7 @@ const ManagePage = () => {
                                             itemList.shopName === shopList.shopName && itemList.unlocked === false ? "blocked item": 'go-away' }
                                             id={(itemList.unlocked === true && ((itemList.type === 'hat' && itemList.shopName === hat) || (itemList.type === 'shirt' && itemList.shopName === shirt)
                                             || (itemList.type === 'pants' && itemList.shopName === pants))) ? "selected" : 'not-selected'}
-                                            onClick= {() => changeSelected(itemList.shopName + ' ' + itemList.id + ' ' + itemList.type )} >
+                                            onClick= {() => changeSelected(itemList.unlocked, itemList.image , itemList.shopName + ' ' + itemList.id + ' ' + itemList.type )} >
                                             {itemList.unlocked === true && <img src={itemList.image} alt= { itemList.shopName + ' ' + itemList.type}/>}
                                             {itemList.unlocked === false && <p className = 'locked'>Locked</p>}
                                         </div>
