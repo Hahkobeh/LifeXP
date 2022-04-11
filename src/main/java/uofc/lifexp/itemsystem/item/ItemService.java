@@ -25,4 +25,8 @@ public class ItemService {
     public String getShopName(String id){
         return itemRepository.findById(id).get().getShopName();
     }
+
+    public String getType(String id){
+        return itemRepository.findById(id).get().getType();
+    }
 }
