@@ -12,5 +12,11 @@ public class Shop {
     private int cost; //100
     private int requiredXp; //1000
 
+    public Shop(String shopName, int cost) {
+        this.shopName = shopName;
+        this.cost = cost;
+        this.requiredXp = cost * 10;
+    }
+
     public Shop(){}
 }

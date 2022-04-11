@@ -17,4 +17,8 @@ public class ShopService {
     public List<Shop> getShops(){
         return shopRepository.findAll();
     }
+
+    public void createShop(String shopName, int cost){
+        shopRepository.save(new Shop(shopName, cost));
+    }
 }
