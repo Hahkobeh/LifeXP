@@ -17,8 +17,7 @@ public class InventoryService {
         return inventoryRepository.getAllByUsername(username);
     }
 
-    public boolean addInventory(String itemId, String username){
+    public void addInventory(String itemId, String username){
         inventoryRepository.save(new Inventory(itemId,username));
-        return true;
     }
 }

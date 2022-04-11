@@ -22,4 +22,7 @@ public class ItemService {
         itemRepository.save(new Item("shirt", shopName));
         itemRepository.save(new Item("pants", shopName));
     }
+    public String getShopName(String id){
+        return itemRepository.findById(id).get().getShopName();
+    }
 }

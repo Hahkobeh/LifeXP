@@ -9,6 +9,7 @@ import uofc.lifexp.itemsystem.item.Item;
 import uofc.lifexp.itemsystem.item.ItemService;
 import uofc.lifexp.itemsystem.shop.Shop;
 import uofc.lifexp.itemsystem.shop.ShopService;
+import uofc.lifexp.usersystem.UserController;
 
 import java.util.List;
 
@@ -19,11 +20,13 @@ public class ItemController {
     private final InventoryService inventoryService;
     private final ItemService itemService;
     private final ShopService shopService;
+    private final UserController userController;
     @Autowired
-    public ItemController(InventoryService inventoryService, ItemService itemService, ShopService shopService){
+    public ItemController(InventoryService inventoryService, ItemService itemService, ShopService shopService, UserController userController){
         this.inventoryService = inventoryService;
         this.itemService = itemService;
         this.shopService = shopService;
+        this.userController = userController;
     }
 
     @PostMapping("/create-shop/{name}/{cost}")
@@ -59,8 +62,16 @@ public class ItemController {
     @PostMapping("/buy-item/{itemId}/{username}")
     @ResponseBody
     public boolean buyItem(@PathVariable String itemId, @PathVariable String username){
-        return inventoryService.addInventory(itemId,username);
+
+        if(userController.pay(username,shopService.getPrice(itemService.getShopName(itemId)))) {
+            inventoryService.addInventory(itemId, username);
+            return true;
+        }
+        return false;
+
+
     }
+
 
 
 }

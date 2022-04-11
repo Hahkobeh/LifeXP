@@ -52,6 +52,10 @@ public class UserController {
         return false;
     }
 
+    public boolean pay(String username, int cost){
+        return userService.payCost(username,cost);
+    }
+
     @GetMapping("/get-user/{id}")
     @ResponseBody
     public User getUser(@PathVariable String id){
