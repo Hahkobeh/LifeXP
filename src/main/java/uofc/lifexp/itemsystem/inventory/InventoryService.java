@@ -24,9 +24,16 @@ public class InventoryService {
     public void equip(String itemId, String username){
         Inventory inventory = inventoryRepository.findByItemIdAndUsername(itemId,username);
         inventory.setEquipped(true);
+        inventoryRepository.save(inventory);
     }
 
-    /*public void unequip(String item, String username) {
-        Inventory inventory = inventoryRepository.
-    }*/
+    public void unequip(String itemId, String username){
+        Inventory inventory = inventoryRepository.findByItemIdAndUsername(itemId,username);
+        inventory.setEquipped(false);
+        inventoryRepository.save(inventory);
+    }
+
+    public List<Inventory> getEquipped(String username){
+        return inventoryRepository.getAllByUsernameAndEquipped(username, true);
+    }
 }
