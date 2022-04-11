@@ -33,10 +33,15 @@ const ManagePage = () => {
     let shops = [];
     let items = [];
     let inventory = [];
+    let equip = [];
 
     const [itemList, setItemList] = useState([]);
     const [shopList, setShopList] = useState([]);
     const [user, setUser] = useState([]);
+
+    const [hat, setHat] = useState(-1);
+    const [shirt, setShirt] = useState(-1);
+    const [pants, setPants] = useState(-1);
 
     async function SetUp(){
         
@@ -45,7 +50,12 @@ const ManagePage = () => {
                 console.log(res.data)
                 setUser(res.data);
             })
-        console.log(user.experience);
+        //console.log(user.experience);
+
+        await axios.get(`http://localhost:8080/api/item/get-equipped/${currentName}`)
+            .then( res => {
+                equip = res.data;
+            })
         await axios.get(`http://localhost:8080/api/item/get-shops`)
             .then( res =>{
                 shops = res.data;
@@ -65,7 +75,7 @@ const ManagePage = () => {
                 inventory = res.data;
             })
         
-        console.log(inventory);
+        //console.log(inventory);
         items.forEach( (item) => {
             
             item["unlocked"] = false;
@@ -157,17 +167,30 @@ const ManagePage = () => {
         })
         let all = [...def, ...pir, ...nin, ...kni];
         
+        all.forEach ( (each) => {
+            
+            equip.forEach( (f) => {
+
+                if(f.id === each.id){
+                    if(each.type === 'hat'){
+                        setHat(each.image);
+                    }else if(each.type === 'shirt'){
+                        setShirt(each.image);
+                    }else{
+                        setPants(each.image);
+                    }
+                }
+            })
+        })
         setItemList(all);
-        console.log(itemList);
+        //console.log(itemList);
     }
 
     useEffect( ()=> {
         SetUp();
     }, []);
 
-    const [hat, setHat] = useState(-1);
-    const [shirt, setShirt] = useState(-1);
-    const [pants, setPants] = useState(-1);
+   
 
 
     async function buyItem(id){
@@ -176,7 +199,7 @@ const ManagePage = () => {
         SetUp();
     }
 
-    function changeSelected(cont, img, str){
+    async function changeSelected(cont, img, str){
 
        
         console.log(str);
@@ -195,6 +218,8 @@ const ManagePage = () => {
         }else{
             changePants(img, s);
         }
+
+        await axios.put(`http://localhost:8080/api/item/equip-item/${currentName}/${s}`)
         
     }
     function changeHat(stor, id){

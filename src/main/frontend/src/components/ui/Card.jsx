@@ -11,7 +11,7 @@ function Card(props){
     const currentName = localStorage.getItem("username");
     async function completedHandler(){
 
-        console.log(props.id);
+        //console.log(props.id);
         //connect to database and change status of task to completed
         
         await axios.put(`http://localhost:8080/api/goal/complete/${props.id}`)
@@ -19,7 +19,7 @@ function Card(props){
     }
 
     async function cancelledHandler(){
-        console.log(props.id);
+        //console.log(props.id);
         //connect to database and change the task with props.id to cancelled
         
         await axios.delete(`http://localhost:8080/api/goal/delete/${props.id}`)

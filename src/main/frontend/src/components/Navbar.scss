@@ -108,3 +108,18 @@
     align-self: center;
   }
 }
+
+
+.profile-things{
+  list-style: none;
+  font-family: var(--main-font);
+  color: var(--nav-link-color);
+  padding: 0;
+  margin: 0;
+}
+
+.profile-things h1{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
