@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import { UserContext }  from '../../UserContext';
 import Navbar from '../../Navbar';
 import {BsPlusCircle} from 'react-icons/bs';
@@ -6,72 +6,32 @@ import Backdrop from './Backdrop';
 import AddPost from './AddPost';
 import Post from '../../ui/Post';
 import './PostPage.scss';
-import AddGoal from './AddGoal';
 
-var posts = [
-    {   id: 1,
-        title: "Amazing new Goal",
-        username: 'harry richard',
-        body: "I found adding a goal to go to the gym every day has been a great motivator and reminder",
-        replies: [
-            {
-                username: 'anya neeze',
-                reply: "same I thought so too"
-            },
-            {
-                username: 'harry richard',
-                reply: "I am going to try doing this"
-            }
-            
-        ]
-    },
-    { id: 2,
-        title: "Amazing progress",
-        username: 'dill doe',
-        body: "I found adding a goal to attend class has kept me honest baout my attendence",
-        replies: [
-            {
-                username: 'boo gure',
-                reply: "same I thought so too"
-            },
-            {
-                username: 'sleezy sneexy',
-                reply: "I am going to try doing this"
-            },
-            {
-                username: 'harry richard',
-                reply: "I am going to try doing this"
-            }
-            
-        ]
-    },
-    {   
-        id: 3,
-        title: "New Method",
-        username: 'The One Who knocks',
-        body: "I found adding a goal to attend class has kept me honest baout my attendence",
-        replies: [
-            
-            
-        ]
-    },
-
-
-];
+import axios from "axios";
        
 
 const PostPage = () =>{
 
     const [click, setClick] = useState(false);
     const topicRef = useRef();
+    const [posts, setPosts] = useState([]);
 
     function handleClick(){
-        
+        handleChange();
         setClick(!click);
     } 
+    useEffect( ()=> {
+        handleChange();
+    }, []);
+    const isAdmin = localStorage.getItem('type');
 
-    function handleChange(){
+    async function handleChange(){
         console.log("it should have changed to " + topicRef.current.value)
+
+        await axios.get(`http://localhost:8080/api/discussion/get-posts/${topicRef.current.value}`)
+            .then( res=> {
+                setPosts(res.data);
+        });
     }
 
     
@@ -79,7 +39,7 @@ const PostPage = () =>{
         <div className='all-posts'>
             <Navbar/>
 
-            {click && <AddPost handler={handleClick}/>}
+            {click && <AddPost board={topicRef.current.value} handler={handleClick}/>}
             {click && <Backdrop onCancel={handleClick}/>}
 
             <ul className="i-hate-having-to-add-this">
@@ -92,9 +52,9 @@ const PostPage = () =>{
             <div className='post-page-dropdown'>
                 <label className='post-topics-label' for="post-topics">Topics:  </label>
                 <select name="post-topics" onChange={handleChange} ref={topicRef}>
-                    <option value="stories">Stories</option>
-                    <option value="reviews">Reviews</option>
-                    <option value="help">Help</option>
+                    <option value="Stories">Stories</option>
+                    <option value="Reviews">Reviews</option>
+                    <option value="Help">Help</option>
                 </select>
                 
             </div>
@@ -102,8 +62,8 @@ const PostPage = () =>{
             <ul className ='post-list'>
             {posts.map(function(posts, index){
                 return <li className='post-list-item'>
-                    <Post id={posts['id']} title={posts['title']} 
-                    commentNum={posts['replies'].length} replies={posts['replies']} post={posts['body']} posterName={posts['username']}/>
+                    <Post reload= {handleChange} A= {isAdmin}id={posts.id} title={posts.title} 
+                     post={posts.body} posterName={posts.username}/>
                     </li>
             })}
 

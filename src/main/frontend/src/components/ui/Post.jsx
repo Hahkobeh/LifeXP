@@ -1,24 +1,33 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 
 import {GoComment} from 'react-icons/go';
 import {BiCommentAdd} from 'react-icons/bi';
 import {BsThreeDotsVertical} from 'react-icons/bs';
 import Options from './Options';
 import './Post.scss';
+import axios from 'axios';
 
 function Post(props){
 
-    const isAdmin = localStorage.getItem('type');
+    
+    
+    const currentName = localStorage.getItem('username');
 
     const [postOpen, setPostOpen] = useState(false);
     const [openTextBox, setOpenTextBox] = useState(false);
     const [openOptions, setOpenOptions] = useState(false);
     const [commentSelectable, setCommentSelectable] = useState(false);
+    const [replies, setReplies] = useState([]);
 
     const replyRef = useRef();
 
-    function openPost(){
-        setPostOpen(!postOpen);
+    async function openPost(){
+        
+        await axios.get(`http://localhost:8080/api/discussion/get-comments/${props.id}`)
+            .then( res =>{
+                setReplies(res.data);
+            });
+        setPostOpen(true);
     }
 
     function closePost(){
@@ -31,32 +40,47 @@ function Post(props){
         setOpenTextBox(true);
     }
 
-    function replyHandler(){
-        console.log(replyRef.current.value);
+    async function replyHandler(){
+
+        if(replyRef.current.value === ''){
+            return
+        }
+        
+        let data = {
+            postId: props.id,
+            username: currentName,
+            reply: replyRef.current.value 
+
+        }
+        await axios.post(`http://localhost:8080/api/discussion/create-comment`, data)
+        openPost();
+        setOpenTextBox(false);
     }
-    var replies = props.replies;
 
     function postOptions(){
         setOpenOptions(!openOptions);
         setCommentSelectable(false);
     }
 
-    function delPostHandler(){
-
+    async function delPostHandler(){
+        await axios.delete(`http://localhost:8080/api/discussion/delete-post/${props.id}`)
+        props.reload();
     }
 
     function delCommentHandler(){
         setCommentSelectable(true);
     }
-    function deleteComment(){
+    async function deleteComment(id){
         if(commentSelectable){
-            //delete the comment
+            await axios.delete(`http://localhost:8080/api/discussion/delete-comment/${id}`)
         }
         setCommentSelectable(false);
+        openPost();
+        setOpenOptions(false);
     }
-
-    if(isAdmin === 1){
-
+   
+    if(props.A === "1"){
+        console.log("admin ret");
         return (
             <div className ='super-cont'>
                 <div className='cont'>
@@ -73,9 +97,9 @@ function Post(props){
                         <div className='replies'>
                             <ul className ='replies-list'>
                                 {replies.map(function(replies, index){
-                                    return <li className='replies-list-item' onClick={deleteComment}>
-                                    <h4 className='user'>{replies['username']}</h4>
-                                    <p>{replies['reply']}</p>
+                                    return <li className='replies-list-item' onClick={() => deleteComment(replies.id)}>
+                                    <h4 className='user'>{replies.username}</h4>
+                                    <p>{replies.reply}</p>
                                 </li>
                                 })}
                             </ul>
@@ -104,6 +128,7 @@ function Post(props){
     
     
     }else if(!postOpen){
+        
         return(
             <div className='post' onClick={openPost}>
                 
@@ -115,8 +140,6 @@ function Post(props){
     
                 <div className='stats' onClick={openPostTextBox}>
                     <GoComment size={30} />
-                    <h3>{props.commentNum} Comments</h3>
-                    
                 </div>
             </div>
     
@@ -135,8 +158,8 @@ function Post(props){
                     <ul className ='replies-list'>
                         {replies.map(function(replies, index){
                             return <li className='replies-list-item'>
-                            <h4 className='user'>{replies['username']}</h4>
-                            <p>{replies['reply']}</p>
+                            <h4 className='user'>{replies.username}</h4>
+                            <p>{replies.reply}</p>
                         </li>
                         })}
                     </ul>

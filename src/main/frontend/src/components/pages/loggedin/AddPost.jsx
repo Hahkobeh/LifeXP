@@ -26,10 +26,11 @@ function AddPost(props) {
         let data = { 
             username: currentName,
             title: titleRef.current.value,
-            body: bodyRef.current.value
+            body: bodyRef.current.value,
+            boardName: props.board
         }
 
-        //await axios.post(`/${currentName}`, data);
+        await axios.post(`http://localhost:8080/api/discussion/create-post/`, data)
         props.handler();
     }
 

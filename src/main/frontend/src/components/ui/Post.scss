@@ -2,6 +2,7 @@
 .super-cont{
     display: flex;
     width: 100%;
+    
 }
 
 
@@ -36,7 +37,7 @@
     display: flex;
     padding-left: 10px;
     justify-content: space-evenly;
-    width: 30%;
+    width: 10%;
 }
 
 .post h3{
@@ -88,17 +89,6 @@ button{
     
         width: 98%;
     }
-}
-
-@media screen and (max-width: 480px){
-    .post .stats{
-        display: flex;
-        padding-left: 10px;
-        justify-content: space-evenly;
-        width: 45%;
-    }
-    
-
 }
 
 @media screen and (max-width: 950px){
