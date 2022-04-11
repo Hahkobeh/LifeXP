@@ -13,6 +13,10 @@ public class ShopService {
         this.shopRepository = shopRepository;
     }
 
+    public int getPrice(String shopName){
+        return shopRepository.findById(shopName).get().getCost();
+    }
+
 
     public List<Shop> getShops(){
         return shopRepository.findAll();
