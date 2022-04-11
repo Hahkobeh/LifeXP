@@ -18,8 +18,8 @@ public class PostService {
         postRepository.save(new Post(postForm));
     }
 
-    public List<Post> getPosts(String boardId){
-        return postRepository.findAllByBoardId(boardId);
+    public List<Post> getPosts(String boardName){
+        return postRepository.findAllByBoardName(boardName);
     }
 
     public boolean deletePost(String id){

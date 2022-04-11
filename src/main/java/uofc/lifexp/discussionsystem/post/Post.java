@@ -10,14 +10,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Post {
     @Id
     private String id;
-    private String boardId;
+    private String boardName;
     private String username;
     private String title;
     private String body;
 
     public Post(PostForm postForm){
         this.id = new ObjectId().toString();
-        this.boardId = postForm.getBoardId();
+        this.boardName = postForm.getBoardName();
         this.username = postForm.getUsername();
         this.title = postForm.getTitle();
         this.body = postForm.getTitle();

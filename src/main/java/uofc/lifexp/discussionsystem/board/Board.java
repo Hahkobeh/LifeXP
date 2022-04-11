@@ -9,11 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("boards")
 public class Board {
     @Id
-    private String id;
     private String boardName;
 
     public Board(String boardName) {
-        this.id = new ObjectId().toString();
         this.boardName = boardName;
     }
     public Board(){}
