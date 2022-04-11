@@ -58,10 +58,10 @@ public class DiscussionController {
         return boardService.getBoards();
     }
 
-    @GetMapping("/get-posts/{boardId}")
+    @GetMapping("/get-posts/{boardName}")
     @ResponseBody
-    public List<Post> getPosts(@PathVariable String boardId){
-        return postService.getPosts(boardId);
+    public List<Post> getPosts(@PathVariable String boardName){
+        return postService.getPosts(boardName);
     }
 
     @GetMapping("/get-comments/{postId}")
