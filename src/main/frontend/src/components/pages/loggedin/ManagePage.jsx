@@ -23,6 +23,7 @@ import pantsNinja from "../../images/ninja-legs.png";
 import hatKnight from "../../images/knight.png";
 import shirtKnight from "../../images/armor.png";
 import pantsKnight from "../../images/armour.png";
+import { renderMatches } from 'react-router-dom';
 
 
 const ManagePage = () => {
@@ -42,6 +43,8 @@ const ManagePage = () => {
     const [hat, setHat] = useState(-1);
     const [shirt, setShirt] = useState(-1);
     const [pants, setPants] = useState(-1);
+
+    const [changed, setChanged] = useState(false);
 
     async function SetUp(){
         
@@ -173,8 +176,10 @@ const ManagePage = () => {
 
                 if(f.id === each.id){
                     if(each.type === 'hat'){
+                        
                         setHat(each.image);
                     }else if(each.type === 'shirt'){
+                        
                         setShirt(each.image);
                     }else{
                         setPants(each.image);
@@ -220,6 +225,7 @@ const ManagePage = () => {
         }
 
         await axios.put(`http://localhost:8080/api/item/equip-item/${currentName}/${s}`)
+        setChanged(!changed);
         
     }
     function changeHat(stor, id){
@@ -244,7 +250,7 @@ const ManagePage = () => {
     return(
         
         <div>
-            <Navbar/>
+            <Navbar changed={changed}/>
             
             <div className='store-container'>
 

@@ -64,7 +64,7 @@ function GoalPage(){
     return(
        
         <div className = "goal-page">
-            <Navbar/>
+            <Navbar c={currentC}/>
             {click && <AddGoal handler = {newGoalHandler}/>}
             {click && <Backdrop onCancel={handleClick}/>}
 

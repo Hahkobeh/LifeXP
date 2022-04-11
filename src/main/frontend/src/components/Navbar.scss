@@ -98,7 +98,6 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   padding-top: 10px;
-  border: 2px solid red;
 }
 
 .avatar{
@@ -142,7 +141,7 @@
   }
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:985px){
 
   .bars{
     display: block;
@@ -178,6 +177,30 @@
   .nav-item{
     margin: 1.5rem 0;
     align-self: center;
+  }
+
+}
+
+@media screen and (max-width:400px){
+  .profile-things h1{
+    font-size: 0.6rem;
+  }
+
+  .prof{
+    margin-top: 0px;
+    grid-gap: 20px;
+  }
+
+  .avatar-piece{
+    height: 20px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .avatar{
+    margin-top: 0px;
   }
 
 }

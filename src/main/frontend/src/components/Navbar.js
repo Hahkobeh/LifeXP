@@ -24,9 +24,16 @@ import shirtKnight from "./images/armor.png";
 import pantsKnight from "./images/armour.png";
 
 
-const Navbar = () => {
+
+function Navbar(props) {
 
     
+    
+    useEffect( ()=>{
+        
+            userInfo();
+       
+    }, [props])
     const currentName = localStorage.getItem('username');
     const id = localStorage.getItem('id');
 
@@ -44,22 +51,20 @@ const Navbar = () => {
     let navigate = useNavigate();
 
     let equip = [];
-    
-    useEffect( ()=> {
+    useEffect( ()=>{
         userInfo();
-    }, []);
-    
+    }, [])
     
     async function userInfo(){
         await axios.get(`http://localhost:8080/api/user/get-user/${id}`)
             .then( res => {
-                console.log(res.data)
+                //console.log(res.data)
                 setUser(res.data);
             })
         
         await axios.get(`http://localhost:8080/api/item/get-equipped/${currentName}`)
             .then( res => {
-                console.log(res.data)
+                //console.log(res.data)
                 equip = res.data;
             })
 
