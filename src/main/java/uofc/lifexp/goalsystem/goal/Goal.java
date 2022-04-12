@@ -18,12 +18,14 @@ public class Goal {
     private int status;// 0 incomplete, 1 complete, 2 is overdue
     private int difficulty;//1 - 5, 5 hardest
     private Date due = null;
+    private String date;
 
 
     public Goal(GoalForm goalForm){
         this.id = new ObjectId().toString();
         this.username = goalForm.getUsername();
         this.title = goalForm.getTitle();
+        this.date = goalForm.getDate();
         try {
             this.due = new SimpleDateFormat("yyyy-MM-dd").parse(goalForm.getDate());
         }catch (Exception e){
