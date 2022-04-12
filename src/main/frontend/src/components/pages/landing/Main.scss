@@ -1,50 +1,77 @@
 @import 'src/components/Variables';
 
 .main{
-    height: 100vh;
+    height: calc(100vh - 100px);
     width: 100%;
     position: absolute;
     left: 0;
-    top:0;
-    
-    z-index: -1;
+    top:100px;
+    z-index: -2;
 
-    background-image: url('../../images/landingBackground.svg'), linear-gradient(var(--color-background), var(--color-background));
-    background-size: 115vw 117vh;
+    overflow: hidden;
+
+    background: $light-blue;
+
+
+    .background{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -10%;
+        width: 130%;
+        z-index: -3;
+
+    }
+
+    .button-wrapper{
+
+        display: flex;
+
+
+        justify-content: space-evenly;
+        margin:0;
+        align-items: center;
+        padding-bottom: 0;
+        padding-left: 30%;
+        padding-right: 30%;
+
+        .button{
+            margin-top: 500px;
+            width: 13rem;
+            height: 2cm;
+            border:none;
+            color: var(--nav-link-color);
+            font-family: var(--main-font);
+            font-size: 1rem;
+            h1{
+
+                justify-content: center;
+                margin: auto 0 auto 2.5%;
+
+            }
+
+            background-image: linear-gradient(
+                            to right,
+                            var(--nav-background-2),
+                            var(--nav-background-2) 5%,
+                            var(--nav-background) 5%,
+                            var(--nav-background) 100%
+            );
+
+        }
+
+
+    }
+
   
 
 }
 
-.main .button-wrapper{
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin:0;
-    align-items: center;
-    padding-bottom: 0;
-    padding-left: 30%;
-    padding-right: 30%;
-    
-  
+.background2{
+    display: none;
 }
 
-.main .button{
-    width: 13rem;
-    height: 2cm;
-    border-radius: 0;
-    color: var(--nav-link-color);
-    font-family: var(--main-font);
-    font-size: 2.5rem;
 
-    background-image: linear-gradient(
-        to right,
-        var(--nav-background-2),
-        var(--nav-background-2) 5%,
-        var(--nav-background) 5%,
-        var(--nav-background) 100%,
-    );
-
-}
 
 .main .button:hover{
     color: var(--nav-link-color-hover);
@@ -53,24 +80,49 @@
 @media screen and (max-width: 1400px){
 
     .main .button-wrapper{
+        margin-top: 300px;
         padding-left: 25%;
         padding-right: 25%;
+        .button{
+            margin-top: 30px;
+        }
  
     }
 
 }
 
-@media screen and (max-width: 915px){
+@media screen and (max-width: 700px){
+
+    .button-wrapper{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 985px){
 
     .main .button-wrapper{
         padding-left: 20%;
         padding-right: 20%;
- 
+        margin-top: 100px;
      }
-    
+
     .main .button{
         font-size: 2rem;
     }
+
+    .main .background{
+        display: none;
+    }
+
+    .background2{
+        display: block;
+        margin: 200px auto 0 auto;
+        width: 80%;
+
+
+    }
+
+
 
 }
 

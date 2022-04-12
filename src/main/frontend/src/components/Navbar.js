@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import axios from "axios";
 
 import './Navbar.scss';
-import logo from './images/logo.svg';
+import logo from './images/logo.png';
 
 import hatDefault from './images/monkey.png';
 import shirtDefault from './images/cloth.png';
@@ -59,15 +59,17 @@ function Navbar(props) {
         await axios.get(`http://localhost:8080/api/user/get-user/${id}`)
             .then( res => {
                 //console.log(res.data)
-                setUser(res.data);
+                    setUser(res.data);
             })
+
         
         await axios.get(`http://localhost:8080/api/item/get-equipped/${currentName}`)
             .then( res => {
                 //console.log(res.data)
-                equip = res.data;
-            })
 
+                equip = res.data;
+
+            })
             equip.forEach( (f) => {
                 
                 if(f.type === 'hat'){
@@ -80,7 +82,7 @@ function Navbar(props) {
                     }else{
                         setHat(hatKnight);
                     }
-                    
+
                 }else if(f.type === 'shirt'){
                     if(f.shopName === "Default"){
                         setBody(shirtDefault);
@@ -128,12 +130,11 @@ function Navbar(props) {
 
     if(!currentName){
         return (
-     
-            <div className="header">
+
                 <nav className="navbar">
     
                     <a href='/'>
-                        <img src={logo} className = 'logo'/>
+                        <img src={logo} className = 'logo' alt='logo'/>
                     </a>
                     <div className='bars' onClick={handleClick}>
                         {click ? (<FaTimes size={30} style={{color: '#EEDF93'}}/>)
@@ -153,32 +154,30 @@ function Navbar(props) {
                         </li>
                     </ul>
                 </nav>
-            </div>
     
     
         );
     }else{
         return(
-            <div className="header">
                 <nav className="navbar">
 
-                    <img src={logo} className = 'logo'/>
+                    <img src={logo} className = 'logo' alt='logo'/>
 
                     <div className = "prof">
                         <ul className='avatar'>
                             <li>
                                 <div className="avatar-piece">
-                                    <img src={hat} alt='Selected Hat'/>
+                                    <img src={hat} alt='H'/>
                                 </div>
                             </li>
                             <li>
                                 <div className="avatar-piece">
-                                        <img src={body} alt='Selected Shirt'/>
+                                        <img src={body} alt='S'/>
                                 </div>
                             </li>
                             <li>
                                 <div className="avatar-piece">
-                                    <img src={legs} alt='Selected Pants'/>
+                                    <img src={legs} alt='P'/>
                                 </div>
                             </li>
                     
@@ -189,10 +188,10 @@ function Navbar(props) {
                                 <h1>{currentName}</h1> 
                             </li>
                             <li>
-                                <h1>XP: {user.experience}</h1> 
+                                <h2>XP: {user.experience}</h2>
                             </li>
                             <li>
-                                <h1>Gold: {user.gold}</h1> 
+                                <h2>Gold: {user.gold}</h2>
                             </li>
                         </ul>
                     </div>
@@ -205,20 +204,19 @@ function Navbar(props) {
     
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
                         <li className ='nav-item'>
-                            <button onClick= {goalHandler}>My Goals</button>
+                            <button onClick= {goalHandler}>Goals</button>
                         </li>
                         <li className ='nav-item'>
-                            <button onClick={manageHandler}>Manage Account</button>
+                            <button onClick={manageHandler}>Shop</button>
                         </li>
                         <li className ='nav-item'>
-                            <button onClick={postHandler}>Discussion Page</button>
+                            <button onClick={postHandler}>Discussion</button>
                         </li>
                         <li className = 'nav-item'>
                             <button  onClick={logoutHandler} className='navbar-buttons'>Logout</button>
                         </li>
                     </ul>
                 </nav>
-            </div>
         );
     }
 

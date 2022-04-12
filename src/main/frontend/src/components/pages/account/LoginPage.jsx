@@ -78,7 +78,7 @@ function LoginPage(){
 
                 )
             console.log(usernameValue)
-            if(usernameValue === ''){
+            if(usernameValue === undefined){
                 setError(true)
                 return
             }

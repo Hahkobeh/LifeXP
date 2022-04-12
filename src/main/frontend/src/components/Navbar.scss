@@ -1,62 +1,80 @@
 @import 'src/components/Variables';
 
-.header {
+.navbar{
   position: fixed;
-  font-family: var(--main-font);
-  height: 10vh;
   width: 100%;
-  padding-right: 5%;
-  padding-left: 2%;
+  height: 100px;
   top: 0;
   left: 0;
-  z-index: 1;
-  transition: .3s ease-in;
-  overflow: hidden;
   background-image: linear-gradient(
-    to bottom,
-    var(--nav-background),
-    var(--nav-background) 80%,
-    var(--nav-background-2) 80%,
-    var(--nav-background-2) 100%
+                  to bottom,
+                  var(--nav-background),
+                  var(--nav-background) 80%,
+                  var(--nav-background-2) 80%,
+                  var(--nav-background-2) 100%
   );
+  transition: .3s ease-in;
+
+  a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    height: 100%;
+
+  }
+
+  .logo {
+    position: absolute;
+    top: -10%;
+    left: 13px;
+    height: 120%;
+
+  }
+
+
+
+
 }
 
-.header .navbar {
+.navbar img{
+  margin: auto;
+
+}
+
+.nav-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
- // max-width: 1240px;
-  margin: 0;
-  height: 100%;
-  padding: 0;
-}
-
-.header .navbar img{
-  margin-top: 5px;
-}
-
-.header .nav-menu {
-  display: flex;
   list-style: none;
-  align-items: baseline;
-  margin: 0;
   padding: 0;
-  margin-right: 10vw;
+  width: 600px;
+  height: 100%;
+  margin: auto 20px;
 
-  
+
 }
 
-.header .nav-item{
-  margin-left: 3rem;
+
+.nav-item{
+  margin: auto;
+  font-weight: bold;
+  button {
+    font-weight: bold;
+  }
 }
 
-.header .nav-menu a{
+
+.nav-menu a{
   color: var(--nav-link-color);
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
-.header .nav-menu button{
+.nav-menu button{
   background: none;
   border: none;
   cursor: pointer;
@@ -65,11 +83,11 @@
   font-size: 1.8rem;
 }
 
-.header .nav-menu a:hover{
+.nav-menu a:hover{
   color: var(--nav-link-color-hover);
 }
 
-.header .nav-menu button:hover{
+.nav-menu button:hover{
   
   color: var(--nav-link-color-hover);
 
@@ -79,65 +97,85 @@
   display: none;
 }
 
-.profile-things, .avatar{
-  list-style: none;
-  font-family: var(--main-font);
-  color: var(--nav-link-color);
-  padding: 0;
-  margin: 0;
-}
 
-.profile-things h1{
-    font-size: 1rem;
-    padding: 0;
-    margin: 0;
-}
 
 .prof{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  padding-top: 10px;
-}
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 500px;
+  display: flex;
+  flex-direction: row;
 
-.avatar{
-  margin-top: -10px;
-}
 
-.avatar-piece{
-    height: 30px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
+
+  .avatar {
+    list-style: none;
     padding: 0;
+    margin: 0;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+
+    li {
+      height: 33.33%;
+      .avatar-piece {
+
+
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        img{
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .profile-things{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    list-style: none;
+    color: $yellow;
+    margin: auto;
+    h1{
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    h2{
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
 }
 
 
-@media screen and (max-width: 1355px){
-
-  .avatar-piece{
-    height: 25px;
-  }
-
-  .profile-things h1{
-    font-size: 0.8rem;
-  }
-
-}
 
 @media screen and (max-width: 1261px){
-
-  .avatar-piece{
-    height: 25px;
-  }
-
-  .profile-things h1{
-    font-size: 0.6rem;
-  }
-
   .prof{
-    margin-top: 12px;
-    grid-gap: 20px;
+    left: 240px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .prof .profile-things{
+    padding-left: 5px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .prof{
+    left: 10px;
+  }
+  .navbar .logo{
+    left: calc(50vw - 70px);
+    top: 7.5px;
+    width: 140px;
+    height: auto;
   }
 }
 
@@ -145,19 +183,33 @@
 
   .bars{
     display: block;
-    padding-right: 10%;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+
+    z-index: 2;
+    svg{
+      width: 50px;
+      height: 50px;
+    }
+
+
+
   }
 
   .nav-menu{
     position:fixed;
     left: -100%;
-    top: 10vh;
+    top: 0;
     flex-direction: column;
+    justify-content: flex-start;
+
     background-color: var(--transparent-background);
     width: 100%;
-    height: 90vh;
-    z-index: 999;
+    height: 100vh;
+    z-index: 1;
     transition: .3s;
+    margin: 0;
   }
 
   .nav-menu.active{
@@ -165,42 +217,9 @@
 
   }
 
-  .profile-things h1{
-    font-size: 0.8rem;
-  }
-
-  .prof{
-    margin-top: 0px;
-    grid-gap: 20px;
-  }
-
   .nav-item{
     margin: 1.5rem 0;
     align-self: center;
-  }
-
-}
-
-@media screen and (max-width:400px){
-  .profile-things h1{
-    font-size: 0.6rem;
-  }
-
-  .prof{
-    margin-top: 0px;
-    grid-gap: 20px;
-  }
-
-  .avatar-piece{
-    height: 20px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-
-  .avatar{
-    margin-top: 0px;
   }
 
 }
