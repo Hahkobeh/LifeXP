@@ -67,10 +67,11 @@ const PostPage = () =>{
             </div>
 
             <ul className ='post-list'>
-            {posts.map(function(posts, index){
+            {posts.map(function(post, index){
+                console.log(post.body)
                 return <li className='post-list-item'>
-                    <Post friends= {friends} reload= {handleChange} A= {isAdmin}id={posts.id} title={posts.title} 
-                     post={posts.body} posterName={posts.username}/>
+                    <Post friends= {friends} reload= {handleChange} A= {isAdmin} id={post.id} title={post.title}
+                     post={post.body} posterName={post.username}/>
                     </li>
             })}
 

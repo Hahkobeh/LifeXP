@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uofc.lifexp.goalsystem.goal.Goal;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -84,7 +85,7 @@ public class UserService {
             return false;
         }
         int rewardConstant = goal.getDifficulty() * 10;
-        if(goal.getStatus() == 2){
+        if(goal.getDue().before(new Date())){
             rewardConstant = (int) (rewardConstant * 0.6);
         }
         user.setExperience(user.getExperience() + (rewardConstant * 10));

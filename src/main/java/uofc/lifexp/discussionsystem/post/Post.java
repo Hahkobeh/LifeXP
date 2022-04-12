@@ -20,7 +20,7 @@ public class Post {
         this.boardName = postForm.getBoardName();
         this.username = postForm.getUsername();
         this.title = postForm.getTitle();
-        this.body = postForm.getTitle();
+        this.body = postForm.getBody();
     }
 
     public Post() {

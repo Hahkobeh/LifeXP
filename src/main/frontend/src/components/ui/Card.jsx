@@ -23,7 +23,7 @@ function Card(props){
     if(props.status === 1){
         return<div className="card c">
             <h1 className = 'task-title-c'>{props.title}</h1>
-            <h3 className = 'date'>Completed By:{props.date}</h3>
+            <h3 className = 'date'>Completed By: {props.date}</h3>
         </div>
     }else{
         return<div className={props.status === 2 ? "card overdue": "card"}>

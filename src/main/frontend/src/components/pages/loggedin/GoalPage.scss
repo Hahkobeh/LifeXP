@@ -6,7 +6,7 @@
     position: absolute;
     left: 0;
     top:0;
-    
+    background: $light-blue;
     z-index: -1;
     
 }
@@ -53,6 +53,6 @@
 
 .task-list-item{
     min-height: 100px;
-    padding: auto;
+
     
 }

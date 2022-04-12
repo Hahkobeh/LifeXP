@@ -1,4 +1,9 @@
 @import '../../Variables.scss';
+
+.manage-page{
+    background: $light-blue;
+}
+
 .store-container{
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -7,10 +12,11 @@
     list-style: none;
     width: 1150px;
     margin: 14vh 0;
+
 }
 
 .hat-items, .shirt-items, .pants-items{
-    
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     height: 15vh;
@@ -23,6 +29,7 @@
 }
 
 .item{
+    background: white;
     height: 125px;
     border: 1px solid grey;
     display: flex;
@@ -124,6 +131,7 @@
 }
 
 .selected-item{
+    background: white;
     height: 125px;
     width: 250px;
     border: 1px solid grey;

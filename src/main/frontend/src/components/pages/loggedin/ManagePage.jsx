@@ -249,7 +249,7 @@ const ManagePage = () => {
 
     return(
         
-        <div>
+        <div className='manage-page'>
             <Navbar changed={changed}/>
             
             <div className='store-container'>
