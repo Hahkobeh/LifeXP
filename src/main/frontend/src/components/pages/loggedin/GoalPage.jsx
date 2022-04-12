@@ -86,10 +86,10 @@ function GoalPage(){
                         return <li className='task-list-item' key={index}>
                             
                             {currentC.status !== 2 &&
-                                <Card id={currentC.id} status={currentC.status} date = {currentC.due} reset={SetUp} title = {currentC.title}/>}
+                                <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title}/>}
                             
                             {currentC.status === 2 &&
-                                <Card id={currentC.id} status={currentC.status} date = {currentC.due} reset={SetUp} title = {currentC.title + " (Do soon)"}/>}
+                                <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title + " (Do soon)"}/>}
                             
                             </li>;
                            
@@ -101,7 +101,7 @@ function GoalPage(){
                     {completedC.map(function(completedC, index){
                         return <li className='task-list-item' key={index}>
                             
-                            <Card id={completedC.id} status={completedC.status} date = {completedC.due} title = {completedC.title}/>
+                            <Card id={completedC.id} status={completedC.status} date = {completedC.date} title = {completedC.title}/>
                             
                         </li>;
                            
