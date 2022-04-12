@@ -1,4 +1,4 @@
-package uofc.lifexp.goal.goal;
+package uofc.lifexp.goalsystem.goal;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

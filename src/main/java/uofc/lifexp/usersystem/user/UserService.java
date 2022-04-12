@@ -2,7 +2,7 @@ package uofc.lifexp.usersystem.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uofc.lifexp.goal.goal.Goal;
+import uofc.lifexp.goalsystem.goal.Goal;
 
 import java.util.List;
 import java.util.Optional;

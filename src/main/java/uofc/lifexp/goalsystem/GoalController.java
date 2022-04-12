@@ -1,13 +1,12 @@
-package uofc.lifexp.goal;
+package uofc.lifexp.goalsystem;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import uofc.lifexp.goal.goal.Goal;
-import uofc.lifexp.goal.goal.GoalForm;
-import uofc.lifexp.goal.goal.GoalService;
+import uofc.lifexp.goalsystem.goal.Goal;
+import uofc.lifexp.goalsystem.goal.GoalForm;
+import uofc.lifexp.goalsystem.goal.GoalService;
 import uofc.lifexp.usersystem.UserController;
-import uofc.lifexp.usersystem.user.User;
 
 import java.util.List;
 
