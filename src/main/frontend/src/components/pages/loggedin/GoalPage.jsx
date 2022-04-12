@@ -89,7 +89,7 @@ function GoalPage(){
                                 <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title}/>}
                             
                             {currentC.status === 2 &&
-                                <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title + " (Do soon)"}/>}
+                                <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title + " (Late)"}/>}
                             
                             </li>;
                            

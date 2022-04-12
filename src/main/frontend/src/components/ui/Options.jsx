@@ -2,7 +2,6 @@ import React from 'react';
 
 import './Card.scss';
 import {GiCancel} from 'react-icons/gi';
-import axios from "axios";
 import './Options.scss';
 
 function Options(props){
@@ -14,7 +13,9 @@ function Options(props){
             </div>
             <button onClick={props.delPost} id="del-post-button">Delete Post</button>
             
-            <button onClick={props.delComment} id="del-comment-button">Delete Comment</button>
+            {!props.commentClicked && <button onClick={props.delComment} id="del-comment-button">Delete Comment</button>}
+
+            {props.commentClicked && <button onClick={props.delComment} id="del-comment-button-clicked">Click a comment to delete it</button>}
         
         
         </div>

@@ -68,7 +68,7 @@ function Post(props){
     }
 
     function delCommentHandler(){
-        setCommentSelectable(true);
+        setCommentSelectable(!commentSelectable);
     }
     async function deleteComment(id){
         if(commentSelectable){
@@ -80,7 +80,6 @@ function Post(props){
     }
    
     if(props.A === "1"){
-        console.log("admin ret");
         return (
             <div className ='super-cont'>
                 <div className='cont'>
@@ -108,7 +107,7 @@ function Post(props){
 
                         {openTextBox && <div className='user-reply'>
                             <textarea cols='3' placeholder='type response...' ref={replyRef}/>
-                            <button onClick={replyHandler}>Post Reply</button>
+                            <button className='response-button' onClick={replyHandler}>Post Reply</button>
 
                         </div>}
 
@@ -122,7 +121,7 @@ function Post(props){
                     
                 </div>
 
-                {openOptions && <div><Options delPost= {delPostHandler} delComment= {delCommentHandler} closeOptions={postOptions}/></div>}
+                {openOptions && <div><Options delPost= {delPostHandler} delComment= {delCommentHandler} commentClicked ={commentSelectable} closeOptions={postOptions}/></div>}
             </div>
         );
     

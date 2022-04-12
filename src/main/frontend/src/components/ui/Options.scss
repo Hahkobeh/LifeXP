@@ -38,6 +38,12 @@
     margin-bottom: 15px;
 }
 
+#del-comment-button-clicked{
+    background : grey;
+    height: 1.5cm;
+    color: white;
+}
+
 @media screen and (min-width: 950px){
     .opt-card{
         position: fixed;
