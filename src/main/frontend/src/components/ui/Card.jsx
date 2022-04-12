@@ -21,15 +21,16 @@ function Card(props){
         props.reset();
     }
     if(props.status === 1){
-        return<div className="card">
+        return<div className="card c">
             <h1 className = 'task-title-c'>{props.title}</h1>
-
+            <h3 className = 'date'>{props.date}</h3>
         </div>
     }else{
         return<div className={props.status === 2 ? "card overdue": "card"}>
             
             <div className= 'goal-title'>
                 <h1 className = 'task-title'>{props.title}</h1>
+                <h3 className = {props.status === 2 ? 'late date' : 'date'}>Do By: {props.date}</h3>
             </div>
 
             <div className="options">
