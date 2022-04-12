@@ -51,6 +51,13 @@ public class UserController {
         return true;
     }
 
+    @DeleteMapping("/delete-friend/{username1}/{username2}")
+    @ResponseBody
+    public boolean deleteFriend(@PathVariable String username1, @PathVariable String username2){
+        friendService.removeFriend(username1,username2);
+        return true;
+    }
+
 
     public boolean completeGoal(Goal goal){
         if(goal != null){

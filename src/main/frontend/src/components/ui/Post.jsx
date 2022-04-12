@@ -63,11 +63,11 @@ function Post(props){
     }
 
     async function delFriend(){
-        await axios.delete(`http://localhost:8080/api/user/deleteFriend/${currentName}/${props.posterName}`)
+        await axios.delete(`http://localhost:8080/api/user/delete-friend/${currentName}/${props.posterName}`)
         props.reload();
     }
     async function addFriend(){
-        await axios.post(`http://localhost:8080/api/user/addFriend/${currentName}/${props.posterName}`)
+        await axios.post(`http://localhost:8080/api/user/add-friend/${currentName}/${props.posterName}`)
         props.reload();
     }
 

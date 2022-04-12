@@ -48,7 +48,13 @@ public class ItemController {
     @GetMapping("/get-inventory/{username}")
     @ResponseBody
     public List<Inventory> getInventory(@PathVariable String username){
-        return inventoryService.getInventory(username);
+        List<Inventory> inventoryList = inventoryService.getInventory(username);
+        if(inventoryList.isEmpty()){
+            buyItem("62539842ceef583b60cb1999",username);
+            buyItem("62539842ceef583b60cb199a",username);
+            buyItem("62539842ceef583b60cb199b",username);
+        }
+        return inventoryList;
     }
 
     @GetMapping("/get-items")

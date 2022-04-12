@@ -35,4 +35,12 @@ public class FriendService {
         friendRepository.save(friend);
     }
 
+    public void removeFriend(String username1, String username2){
+        if(friendRepository.findByUsername1AndUsername2(username1,username2) != null){
+            friendRepository.deleteByUsername1AndUsername2(username1,username2);
+        }else{
+            friendRepository.deleteByUsername1AndUsername2(username2,username1);
+        }
+
+    }
 }
