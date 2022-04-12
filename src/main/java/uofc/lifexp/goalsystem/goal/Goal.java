@@ -27,7 +27,7 @@ public class Goal {
         this.title = goalForm.getTitle();
         this.date = goalForm.getDate();
         try {
-            this.due = new SimpleDateFormat("yyyy-MM-dd").parse(goalForm.getDate());
+            this.due = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(goalForm.getDate()+"T23:59:59");
         }catch (Exception e){
             e.printStackTrace();
         }

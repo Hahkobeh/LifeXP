@@ -20,7 +20,9 @@ public class GoalService {
         Date date = new Date();
         List<Goal> goals = goalRepository.findAllByUsername(username);
         for(Goal goal:goals){
+
             if(goal.getDue().before(date) && goal.getStatus() == 0){
+                System.out.println(goal.getDue() + "  due:now " + date);
                 goal.setStatus(2);
                 goalRepository.save(goal);
             }
