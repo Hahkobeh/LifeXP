@@ -43,6 +43,7 @@ function GoalPage(){
                 //setOverdueC(overdue);
                 
         });
+        console.log(b);
         const c = b.filter(b => b.status === 1);
         const d = b.filter(b => b.status !== 1);
         setCompletedC(c);
@@ -85,13 +86,10 @@ function GoalPage(){
                         return <li className='task-list-item' key={index}>
                             
                             {currentC.status !== 2 &&
-                                <Card id={currentC.id} status={currentC.status} reset={SetUp} title = {currentC.title}/>}
+                                <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title}/>}
                             
-                            {/*<Card id={currentC.id} status={currentC.status} reset={SetUp}>
-                                
-                                {currentC.status !== 2 && <h1 className='task-title'>{currentC.title}</h1>}
-                                {currentC.status === 2 && <h1>{currentC.title} (Overdue)</h1>}
-                            </Card>*/}
+                            {currentC.status === 2 &&
+                                <Card id={currentC.id} status={currentC.status} date = {currentC.date} reset={SetUp} title = {currentC.title + " (Do soon)"}/>}
                             
                             </li>;
                            
@@ -103,10 +101,7 @@ function GoalPage(){
                     {completedC.map(function(completedC, index){
                         return <li className='task-list-item' key={index}>
                             
-                            <Card id={completedC.id} status={completedC.status} title = {completedC.title}/>
-                            {/*<Card id={completedC.id} status={completedC.status} reset={SetUp}>
-                              <h1 className='task-title-c'>{completedC.title} (Finished)</h1>
-                            </Card>*/}
+                            <Card id={completedC.id} status={completedC.status} date = {completedC.date} title = {completedC.title}/>
                             
                         </li>;
                            

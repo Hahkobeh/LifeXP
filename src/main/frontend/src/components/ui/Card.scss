@@ -14,17 +14,22 @@
     display: flex;
 }
 
+.c{
+    flex-direction: column
+}
+
 .task-title-c{
     margin: auto;
 }
 
 .overdue{
-    background-color: rgb(179, 94, 94);
     
+    box-shadow: 0 4px 8px rgb(179, 94, 94);
 }
 
 .goal-title{
     margin: auto;
+    width: 85%;
     max-width: 85%;
     overflow-wrap: break-word;
 }
@@ -56,6 +61,12 @@
     height: 50%;
 }
 
+.date{
+    text-align: center;
+}
+.late{
+    color:rgb(245, 118, 118);
+}
 
 
 /*

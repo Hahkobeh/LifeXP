@@ -13,6 +13,7 @@ function AddGoal(props){
 
     const [noTitle, setNoTitle] = useState(false);
     const [noDifficulty, setNoDifficulty] = useState(false);
+    const [noDate, setNoDate] = useState(false);
 
     const [click, setClick] = useState(0);
 
@@ -21,6 +22,7 @@ function AddGoal(props){
         e.preventDefault();
         setNoTitle(false);
         setNoDifficulty(false);
+        setNoDate(false);
 
         if(titleRef.current.value === ''){
             setNoTitle(true);
@@ -28,6 +30,9 @@ function AddGoal(props){
         }else if(click === 0){
             setNoDifficulty(true);
             return;
+        }else if(dateRef.current.value.toString() === ''){
+            setNoDate(true);
+            return
         }
         
         let data = { 
@@ -38,7 +43,6 @@ function AddGoal(props){
         }
 
         await axios.post(`http://localhost:8080/api/goal/create-goal`, data);
-        console.log("it is not adding goal for some reason0");
         props.handler();
 
     }
@@ -83,6 +87,7 @@ function AddGoal(props){
                     <input ref = {dateRef} type="date" id="start" name="trip-start" min="2022-04-09" max="2030-12-31"></input>
                 </div>
                 
+                {noDate &&  <p className='error'>Please enter a date</p>}
 
                 <div className='create-goal'>
                     <button onClick={submitGoal} id="submitButton">Create Goal!</button>
