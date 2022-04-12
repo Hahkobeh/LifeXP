@@ -69,7 +69,7 @@ function Navbar(props) {
             })
 
             equip.forEach( (f) => {
-                console.log(f);
+                
                 if(f.type === 'hat'){
                     if(f.shopName === "Default"){
                         setHat(hatDefault);

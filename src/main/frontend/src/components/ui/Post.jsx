@@ -62,6 +62,15 @@ function Post(props){
         setCommentSelectable(false);
     }
 
+    async function delFriend(){
+        await axios.delete(`http://localhost:8080/api/user/deleteFriend/${currentName}/${props.posterName}`)
+        props.reload();
+    }
+    async function addFriend(){
+        await axios.post(`http://localhost:8080/api/user/addFriend/${currentName}/${props.posterName}`)
+        props.reload();
+    }
+
     async function delPostHandler(){
         await axios.delete(`http://localhost:8080/api/discussion/delete-post/${props.id}`)
         props.reload();
@@ -88,11 +97,17 @@ function Post(props){
                     <div className='post' >
 
                         <div className='post-container' onClick={closePost}>
-                            <h1>{props.title}</h1>
-                            <h3>Posted By: {props.posterName}</h3>
-                            <p>{props.post}</p>
+                        
+                            <div className='first-part'>
+                                <h1>{props.title}</h1>
+                                <h3 className = {props.friends.includes(props.posterName) ? 'green' : '' }>Posted By: {props.posterName}</h3>
+                                <p>{props.post}</p>
+                            </div>
+                            <div className='add-friend'>
+                                {!props.friends.includes(props.posterName) && <button className='friend-button' onClick ={addFriend}>Add Friend</button>}
+                                {props.friends.includes(props.posterName) && <button className='remove-friend-button' onClick ={delFriend}>Remove Friend</button>}
+                            </div>
                         </div>
-
                         <div className='replies'>
                             <ul className ='replies-list'>
                                 {replies.map(function(replies, index){
@@ -129,11 +144,18 @@ function Post(props){
     }else if(!postOpen){
         
         return(
-            <div className='post' onClick={openPost}>
+            <div className={props.friends.includes(props.posterName) ? 'post friend-post' : 'post'} >
                 
                 <div className='post-container'>
-                    <h1>{props.title}</h1>
-                    <h3>Posted By: {props.posterName}</h3>
+                    <div className='first-part' onClick={openPost}>
+                        <h1 >{props.title}</h1>
+                        <h3 className = {props.friends.includes(props.posterName) ? 'green' : '' }>Posted By: {props.posterName}</h3>
+                    </div>
+                    <div className='add-friend'>
+                        {!props.friends.includes(props.posterName) && <button className='friend-button' onClick ={addFriend} >Add Friend</button>}
+                        {props.friends.includes(props.posterName) && <button className='remove-friend-button' >Remove Friend</button>}
+                    </div>
+                    
                 </div>
                 
     
@@ -147,10 +169,17 @@ function Post(props){
         return(
             <div className='post' >
 
-                <div className='post-container' onClick={closePost}>
-                    <h1>{props.title}</h1>
-                    <h3>Posted By: {props.posterName}</h3>
-                    <p>{props.post}</p>
+                <div className='post-container' >
+                    
+                    <div className='first-part' onClick={closePost}>
+                        <h1>{props.title}</h1>
+                        <h3 className = {props.friends.includes(props.posterName) ? 'green' : '' }>Posted By: {props.posterName}</h3>
+                        <p>{props.post}</p>
+                    </div>
+                    <div className='add-friend'>
+                        {!props.friends.includes(props.posterName) && <button className='friend-button' onClick ={addFriend}>Add Friend</button>}
+                        {props.friends.includes(props.posterName) && <button className='remove-friend-button' onClick ={delFriend}>Remove Friend</button>}
+                    </div>
                 </div>
 
                 <div className='replies'>
@@ -167,7 +196,7 @@ function Post(props){
 
                 {openTextBox && <div className='user-reply'>
                     <textarea cols='3' placeholder='type response...' ref={replyRef}/>
-                    <button onClick={replyHandler}>Post Reply</button>
+                    <button className='response-button' onClick={replyHandler}>Post Reply</button>
 
                 </div>}
 

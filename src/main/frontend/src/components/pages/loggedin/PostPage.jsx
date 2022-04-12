@@ -15,6 +15,7 @@ const PostPage = () =>{
     const [click, setClick] = useState(false);
     const topicRef = useRef();
     const [posts, setPosts] = useState([]);
+    const [friends, setFriends] = useState([]);
 
     function handleClick(){
         handleChange();
@@ -24,13 +25,19 @@ const PostPage = () =>{
         handleChange();
     }, []);
     const isAdmin = localStorage.getItem('type');
+    const currentName = localStorage.getItem('username');
 
     async function handleChange(){
-        console.log("it should have changed to " + topicRef.current.value)
+        
 
         await axios.get(`http://localhost:8080/api/discussion/get-posts/${topicRef.current.value}`)
             .then( res=> {
                 setPosts(res.data);
+        });
+
+        await axios.get(`http://localhost:8080/api/user/get-friends/${currentName}`)
+            .then( res => {
+                setFriends(res.data);
         });
     }
 
@@ -62,7 +69,7 @@ const PostPage = () =>{
             <ul className ='post-list'>
             {posts.map(function(posts, index){
                 return <li className='post-list-item'>
-                    <Post reload= {handleChange} A= {isAdmin}id={posts.id} title={posts.title} 
+                    <Post friends= {friends} reload= {handleChange} A= {isAdmin}id={posts.id} title={posts.title} 
                      post={posts.body} posterName={posts.username}/>
                     </li>
             })}
