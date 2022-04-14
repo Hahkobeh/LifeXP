@@ -30,6 +30,17 @@ function Post(props){
         setPostOpen(true);
     }
 
+    useEffect( ()=> {
+        SetUp();
+    }, []);
+
+    async function SetUp(){
+        await axios.get(`http://localhost:8080/api/discussion/get-comments/${props.id}`)
+            .then( res =>{
+                setReplies(res.data);
+            });
+    }
+
     function closePost(){
         setPostOpen(false);
         setOpenTextBox(false);
