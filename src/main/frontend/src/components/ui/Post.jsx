@@ -164,7 +164,7 @@ function Post(props){
                     </div>
                     <div className='add-friend'>
                         {!props.friends.includes(props.posterName) && <button className='friend-button' onClick ={addFriend} >Add Friend</button>}
-                        {props.friends.includes(props.posterName) && <button className='remove-friend-button' >Remove Friend</button>}
+                        {props.friends.includes(props.posterName) && <button className='remove-friend-button' onClick ={delFriend} >Remove Friend</button>}
                     </div>
                     
                 </div>
