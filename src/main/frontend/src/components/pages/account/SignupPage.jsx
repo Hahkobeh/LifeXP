@@ -102,7 +102,7 @@ function SignupPage(){
                 <div className="control">
                     <label className="label" htmlFor="email">Enter a username:</label>
                     <input type='text' id='email' placeholder= 'e.g jacob24' oninvalid="" ref={emailRef} />
-                    {emailError && <p className="error"> You need to enter an email.</p>}
+                    {emailError && <p className="error"> You need to enter a username.</p>}
                    
                 </div>
                 <div className="control">
