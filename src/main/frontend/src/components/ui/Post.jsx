@@ -178,7 +178,7 @@ function Post(props){
         );
     }else{
         return(
-            <div className='post' >
+            <div className={props.friends.includes(props.posterName) ? 'post friend-post' : 'post'}>
 
                 <div className='post-container' >
                     
