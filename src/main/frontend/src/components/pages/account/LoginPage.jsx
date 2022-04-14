@@ -118,7 +118,7 @@ function LoginPage(){
                     {passwordError && <p className='error'>You must enter a password.</p>}
                     
                 </div>
-                {error && <p className='error'>Email and password do not match</p>}
+                {error && <p className='error'>Username and password do not match</p>}
                 <div className ="control">
                     <input value= 'Log In' type='submit' id="submitButton"/>
                 </div>
