@@ -20,7 +20,7 @@ public class UserService {
 
     public Boolean createUser(String username, String password){
         User user = userRepository.findByUsername(username);
-        if(user != null){
+        if(user == null){
             System.out.println("user not found, creating a user");
             User newUser = new User(username, password);
             userRepository.save(newUser);

@@ -51,8 +51,11 @@ public class ItemController {
         List<Inventory> inventoryList = inventoryService.getInventory(username);
         if(inventoryList.isEmpty()){
             buyItem("62539842ceef583b60cb1999",username);
+            equipItem(username,"62539842ceef583b60cb1999");
             buyItem("62539842ceef583b60cb199a",username);
+            equipItem(username,"62539842ceef583b60cb199a");
             buyItem("62539842ceef583b60cb199b",username);
+            equipItem(username,"62539842ceef583b60cb199b");
         }
         return inventoryList;
     }

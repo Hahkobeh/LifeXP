@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 
 import './Contact.scss';
-import logo from '../../images/logo.svg';
+import logo from '../../images/logo.png';
 
 function Contact(){
 
