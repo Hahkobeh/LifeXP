@@ -122,13 +122,13 @@ function Post(props){
                         <div className='replies'>
                             <ul className ='replies-list'>
                                 {replies.map(function(replies, index){
-                                    return <li className='replies-list-item'>
+                                    return <li className='replies-list-item' onClick={() => deleteComment(replies.id)}>
                                     <h4 className='user'>{replies.username}</h4>
                                     <p>{replies.reply}</p>
                                 </li>
                                 })}
                             </ul>
-                    
+                            
                         </div>
 
                         {openTextBox && <div className='user-reply'>
