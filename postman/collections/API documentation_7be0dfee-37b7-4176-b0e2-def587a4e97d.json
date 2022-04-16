@@ -1,0 +1,2517 @@
+{
+    "info": {
+        "_postman_id": "eec4a444-4398-459b-85e6-9a94a077288d",
+        "name": "API documentation",
+        "description": "LifeXP API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "discussion",
+            "item": [
+                {
+                    "name": "POST api/discussion/create-board/{name}",
+                    "id": "13efa567-f367-4348-ac79-d4c02af169fb",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/create-board/:name",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "create-board",
+                                ":name"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "name",
+                                    "value": "Motivation",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        },
+                        "description": "Creates a new board."
+                    },
+                    "response": [
+                        {
+                            "id": "ef702147-8f0d-4f5f-ab21-2a88032cc36e",
+                            "name": "POST api/discussion/create-board/{name}",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/create-board/:name",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "create-board",
+                                        ":name"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "name",
+                                            "value": "Motivation",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:25:01 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"boardName\": \"Motivation\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api/discussion/create-comment",
+                    "id": "5abe9d41-4c68-483d-be39-081fcb223ede",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"postId\": \"625a0eacb418c16ce5b1ef33\",\r\n    \"username\": \"newuser12\",\r\n    \"reply\": \"Hello this is a reply\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/create-comment",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "create-comment"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "7534cf4e-a7c8-42b3-b55c-33e415f18f0e",
+                            "name": "POST api/discussion/create-comment",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"postId\": \"625a0eacb418c16ce5b1ef33\",\r\n    \"username\": \"newuser12\",\r\n    \"reply\": \"Hello this is a reply\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/create-comment",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "create-comment"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:34:29 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api/discussion/create-post",
+                    "id": "c7c06dd5-2c50-440b-9aec-e12d8c4d5cfb",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"boardName\":\"Motivation\",\r\n    \"username\": \"newuser12\",\r\n    \"title\": \"This is a post\",\r\n    \"body\": \"This is the post body\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/create-post",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "create-post"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "fe9fb467-79bf-430a-b9ce-93d6834ff0d2",
+                            "name": "POST api/discussion/create-post",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"boardName\":\"Motivation\",\r\n    \"username\": \"newuser12\",\r\n    \"title\": \"This is a post\",\r\n    \"body\": \"This is the post body\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/create-post",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "create-post"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:32:44 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api/discussion/delete-comment/{id}",
+                    "id": "90a95f7d-ac16-4b72-b0b8-a881e45b2b43",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/delete-comment/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "delete-comment",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "625a0f15b418c16ce5b1ef34\n",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "ce83f465-eac6-470c-8bdc-d2bf05d5dc90",
+                            "name": "DELETE api/discussion/delete-comment/{id}",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/delete-comment/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "delete-comment",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "625a0f15b418c16ce5b1ef34\n",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:36:09 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api/discussion/delete-post/{id}",
+                    "id": "a9a5604b-a70f-4957-bd4c-2ed1de8ba109",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/delete-post/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "delete-post",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "625a0eacb418c16ce5b1ef33",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "e6442c7f-4a6f-4bd1-a6cd-836ceec5e753",
+                            "name": "DELETE api/discussion/delete-post/{id}",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/delete-post/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "delete-post",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "625a0eacb418c16ce5b1ef33",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:36:34 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/discussion/get-boards",
+                    "id": "3221fd5a-953c-49af-b2ad-e1244b647eef",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/get-boards",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "get-boards"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "4a0f1689-ef65-4872-a650-334e36b28f34",
+                            "name": "GET api/discussion/get-boards",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/get-boards",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "get-boards"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:32:59 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"boardName\": \"Stories\"\n    },\n    {\n        \"boardName\": \"Help\"\n    },\n    {\n        \"boardName\": \"Reviews\"\n    },\n    {\n        \"boardName\": \"Motivation\"\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/discussion/get-comments/{postId}",
+                    "id": "5a71e676-2e6b-4839-8fdc-886faab1d771",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/get-comments/:postId",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "get-comments",
+                                ":postId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "postId",
+                                    "value": "625a0eacb418c16ce5b1ef33",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "03ad7558-c2b4-43d6-a161-3481693d75fb",
+                            "name": "GET api/discussion/get-comments/{postId}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/get-comments/:postId",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "get-comments",
+                                        ":postId"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "postId",
+                                            "value": "625a0eacb418c16ce5b1ef33",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:35:05 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"id\": \"625a0f15b418c16ce5b1ef34\",\n        \"username\": \"newuser12\",\n        \"postId\": \"625a0eacb418c16ce5b1ef33\",\n        \"reply\": \"Hello this is a reply\"\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/discussion/get-posts/{boardName}",
+                    "id": "80a54d55-abc7-4052-a3b9-616a3f40ec7e",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/discussion/get-posts/:boardName",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "discussion",
+                                "get-posts",
+                                ":boardName"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "boardName",
+                                    "value": "Motivation",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "3a3b7ccb-95f9-40d2-a1cc-539f2d3c96e7",
+                            "name": "GET api/discussion/get-posts/{boardName}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/discussion/get-posts/:boardName",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "discussion",
+                                        "get-posts",
+                                        ":boardName"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "boardName",
+                                            "value": "Motivation",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:33:24 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"id\": \"625a0eacb418c16ce5b1ef33\",\n        \"boardName\": \"Motivation\",\n        \"username\": \"newuser12\",\n        \"title\": \"This is a post\",\n        \"body\": \"This is the post body\"\n    }\n]"
+                        }
+                    ]
+                }
+            ],
+            "id": "2b98c0ca-c205-42fe-875b-63b7cad05ce9",
+            "description": "Focuses on the discussion aspect of the application."
+        },
+        {
+            "name": "goal",
+            "item": [
+                {
+                    "name": "PUT api/goal/complete/{id}",
+                    "id": "580a6d88-de2a-4f61-936d-75fe35d97f51",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/goal/complete/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "goal",
+                                "complete",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "625a0fffb418c16ce5b1ef35",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "8bbfddaf-3dd9-4384-9aa5-3ed7560598e0",
+                            "name": "PUT api/goal/complete/{id}",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/goal/complete/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "goal",
+                                        "complete",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "625a0fffb418c16ce5b1ef35",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:39:32 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api/goal/create-goal",
+                    "id": "86c8b48b-e63c-4092-a88c-60fb43a3533e",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"username\": \"newuser12\",\r\n    \"title\": \"New goal\",\r\n    \"date\": \"2022-04-18\",\r\n    \"difficulty\": 3\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/goal/create-goal",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "goal",
+                                "create-goal"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "559c93b7-477f-4b1a-80c9-d2773ec742ae",
+                            "name": "POST api/goal/create-goal",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\": \"newuser12\",\r\n    \"title\": \"New goal\",\r\n    \"date\": \"2022-04-18\",\r\n    \"difficulty\": 3\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/goal/create-goal",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "goal",
+                                        "create-goal"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:38:23 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"id\": \"625a0fffb418c16ce5b1ef35\",\n    \"username\": \"newuser12\",\n    \"title\": \"New goal\",\n    \"status\": 0,\n    \"difficulty\": 3,\n    \"due\": \"2022-04-19T05:59:59.000+00:00\",\n    \"date\": \"2022-04-18\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api/goal/delete/{id}",
+                    "id": "59c62c2c-d959-4223-a752-9a5184fde126",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/goal/delete/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "goal",
+                                "delete",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "625a1051b418c16ce5b1ef36",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "3e69068f-1f60-4c18-9f26-bc87f0cb2e7c",
+                            "name": "DELETE api/goal/delete/{id}",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/goal/delete/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "goal",
+                                        "delete",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "625a1051b418c16ce5b1ef36",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:39:56 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/goal/get-goals/{username}",
+                    "id": "a6f351c1-442e-4e00-bf30-563a8bfb8bb0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/goal/get-goals/:username",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "goal",
+                                "get-goals",
+                                ":username"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "username",
+                                    "value": "newuser12",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "ec8efb8a-7944-42af-a769-53730aeb7e0d",
+                            "name": "GET api/goal/get-goals/{username}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/goal/get-goals/:username",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "goal",
+                                        "get-goals",
+                                        ":username"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username",
+                                            "value": "newuser12",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:38:53 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"id\": \"625a0fffb418c16ce5b1ef35\",\n        \"username\": \"newuser12\",\n        \"title\": \"New goal\",\n        \"status\": 0,\n        \"difficulty\": 3,\n        \"due\": \"2022-04-19T05:59:59.000+00:00\",\n        \"date\": \"2022-04-18\"\n    }\n]"
+                        }
+                    ]
+                }
+            ],
+            "id": "078b5946-29c2-4a44-923d-e8de2ae077a9"
+        },
+        {
+            "name": "item",
+            "item": [
+                {
+                    "name": "POST api/item/buy-item/{itemId}/{username}",
+                    "id": "4807cad1-0edf-41d8-98b0-f849bdf2bc6e",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/buy-item/:itemId/:username",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "buy-item",
+                                ":itemId",
+                                ":username"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "itemId",
+                                    "value": "6253985bceef583b60cb199c",
+                                    "description": "(Required) "
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "newuser12",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "b87424d9-92d6-4ede-8b79-c1aa80c549dc",
+                            "name": "POST api/item/buy-item/{itemId}/{username}",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/buy-item/:itemId/:username",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "buy-item",
+                                        ":itemId",
+                                        ":username"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "itemId",
+                                            "value": "6253985bceef583b60cb199c",
+                                            "description": "(Required) "
+                                        },
+                                        {
+                                            "key": "username",
+                                            "value": "newuser12",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:43:49 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api/item/create-shop/{name}/{cost}",
+                    "id": "d339e670-a390-4391-8696-0e502b8d18f6",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/create-shop/:name/:cost",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "create-shop",
+                                ":name",
+                                ":cost"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "e66e829f-70a7-4343-8713-f3be1e8aa55f",
+                                    "key": "name",
+                                    "value": "esse quis ipsum officia",
+                                    "description": "(Required) "
+                                },
+                                {
+                                    "id": "ef47de04-ab3e-4689-ac11-d99f792b2333",
+                                    "key": "cost",
+                                    "value": "66020184.2152378",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "aadf0e10-ae88-42db-80e9-38725343b300",
+                            "name": "POST api/item/create-shop/{name}/{cost}",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/create-shop/:name/:cost",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "create-shop",
+                                        ":name",
+                                        ":cost"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "name",
+                                            "value": "newShop",
+                                            "description": "(Required) "
+                                        },
+                                        {
+                                            "key": "cost",
+                                            "value": "10",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:44:41 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api/item/equip-item/{username}/{itemId}",
+                    "id": "57df5c92-d5c8-4945-aec8-d9e2a9f0c59f",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/equip-item/:username/:itemId",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "equip-item",
+                                ":username",
+                                ":itemId"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "5288c954-464b-4b6e-8ccd-42f9f760e8cd",
+                                    "key": "username",
+                                    "value": "esse quis ipsum officia",
+                                    "description": "(Required) "
+                                },
+                                {
+                                    "id": "8e1982e1-cbf6-40bf-a67c-0fc2baf31d71",
+                                    "key": "itemId",
+                                    "value": "esse quis ipsum officia",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "19e075ae-97b0-4208-8f7e-df4d746d996d",
+                            "name": "PUT api/item/equip-item/{username}/{itemId}",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/equip-item/:username/:itemId",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "equip-item",
+                                        ":username",
+                                        ":itemId"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username",
+                                            "value": "newuser12",
+                                            "description": "(Required) "
+                                        },
+                                        {
+                                            "key": "itemId",
+                                            "value": "6253985bceef583b60cb199c",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:46:05 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/item/get-equipped/{username}",
+                    "id": "1b0e54f7-1c09-435a-9c2d-4bab9e90e017",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/get-equipped/:username",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "get-equipped",
+                                ":username"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "20b94667-8d81-476d-8383-96aaa36ab59e",
+                                    "key": "username",
+                                    "value": "esse quis ipsum officia",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "68ccaa3f-ef1e-4dcd-bdb5-012ca595f56e",
+                            "name": "GET api/item/get-equipped/{username}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/get-equipped/:username",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "get-equipped",
+                                        ":username"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username",
+                                            "value": "newuser12",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:41:58 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"id\": \"62539842ceef583b60cb1999\",\n        \"type\": \"hat\",\n        \"shopName\": \"Default\"\n    },\n    {\n        \"id\": \"62539842ceef583b60cb199a\",\n        \"type\": \"shirt\",\n        \"shopName\": \"Default\"\n    },\n    {\n        \"id\": \"62539842ceef583b60cb199b\",\n        \"type\": \"pants\",\n        \"shopName\": \"Default\"\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/item/get-inventory/{username}",
+                    "id": "fa8fecc9-d7c3-40fc-b5fc-61a7741d3c4c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/get-inventory/:username",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "get-inventory",
+                                ":username"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "username",
+                                    "value": "newuser12",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "de13ea13-441a-4622-8d68-e23551dc77c9",
+                            "name": "GET api/item/get-inventory/{username}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/get-inventory/:username",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "get-inventory",
+                                        ":username"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username",
+                                            "value": "newuser12",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:41:49 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"id\": \"625a10b3b418c16ce5b1ef37\",\n        \"username\": \"newuser12\",\n        \"itemId\": \"62539842ceef583b60cb1999\",\n        \"equipped\": true\n    },\n    {\n        \"id\": \"625a10b3b418c16ce5b1ef38\",\n        \"username\": \"newuser12\",\n        \"itemId\": \"62539842ceef583b60cb199a\",\n        \"equipped\": true\n    },\n    {\n        \"id\": \"625a10b4b418c16ce5b1ef39\",\n        \"username\": \"newuser12\",\n        \"itemId\": \"62539842ceef583b60cb199b\",\n        \"equipped\": true\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/item/get-items",
+                    "id": "654b25cc-2c1b-4544-b29c-4c86f775f735",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/get-items",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "get-items"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "3a5fba4d-631a-41f0-92af-9c2ac7c7f09a",
+                            "name": "GET api/item/get-items",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/get-items",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "get-items"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:41:34 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"id\": \"62539842ceef583b60cb1999\",\n        \"type\": \"hat\",\n        \"shopName\": \"Default\"\n    },\n    {\n        \"id\": \"62539842ceef583b60cb199a\",\n        \"type\": \"shirt\",\n        \"shopName\": \"Default\"\n    },\n    {\n        \"id\": \"62539842ceef583b60cb199b\",\n        \"type\": \"pants\",\n        \"shopName\": \"Default\"\n    },\n    {\n        \"id\": \"6253985bceef583b60cb199c\",\n        \"type\": \"hat\",\n        \"shopName\": \"Pirate\"\n    },\n    {\n        \"id\": \"6253985bceef583b60cb199d\",\n        \"type\": \"shirt\",\n        \"shopName\": \"Pirate\"\n    },\n    {\n        \"id\": \"6253985bceef583b60cb199e\",\n        \"type\": \"pants\",\n        \"shopName\": \"Pirate\"\n    },\n    {\n        \"id\": \"62539861ceef583b60cb199f\",\n        \"type\": \"hat\",\n        \"shopName\": \"Ninja\"\n    },\n    {\n        \"id\": \"62539861ceef583b60cb19a0\",\n        \"type\": \"shirt\",\n        \"shopName\": \"Ninja\"\n    },\n    {\n        \"id\": \"62539861ceef583b60cb19a1\",\n        \"type\": \"pants\",\n        \"shopName\": \"Ninja\"\n    },\n    {\n        \"id\": \"6253986eceef583b60cb19a2\",\n        \"type\": \"hat\",\n        \"shopName\": \"Knight\"\n    },\n    {\n        \"id\": \"6253986eceef583b60cb19a3\",\n        \"type\": \"shirt\",\n        \"shopName\": \"Knight\"\n    },\n    {\n        \"id\": \"6253986eceef583b60cb19a4\",\n        \"type\": \"pants\",\n        \"shopName\": \"Knight\"\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/item/get-shops",
+                    "id": "b47ee817-cba7-45c8-8127-e0c320022080",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/item/get-shops",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "item",
+                                "get-shops"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "5adbef25-f9e2-41da-8123-7524ed11e354",
+                            "name": "GET api/item/get-shops",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/item/get-shops",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "item",
+                                        "get-shops"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:41:41 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    {\n        \"shopName\": \"Default\",\n        \"cost\": 0,\n        \"requiredXp\": 0\n    },\n    {\n        \"shopName\": \"Pirate\",\n        \"cost\": 100,\n        \"requiredXp\": 1000\n    },\n    {\n        \"shopName\": \"Ninja\",\n        \"cost\": 200,\n        \"requiredXp\": 2000\n    },\n    {\n        \"shopName\": \"Knight\",\n        \"cost\": 300,\n        \"requiredXp\": 3000\n    }\n]"
+                        }
+                    ]
+                }
+            ],
+            "id": "fbc0f203-cf2a-4af8-843d-b4b94982e417"
+        },
+        {
+            "name": "user",
+            "item": [
+                {
+                    "name": "POST api/user/addFriend/{username1}/{username2}",
+                    "id": "e4e91286-242d-42c6-9e1b-50ce4897cf73",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/user/add-friend/:username1/:username2",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "user",
+                                "add-friend",
+                                ":username1",
+                                ":username2"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "username1",
+                                    "value": "newuser12"
+                                },
+                                {
+                                    "key": "username2",
+                                    "value": "man"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "b5db183c-8465-4d3c-9030-efec71abe76f",
+                            "name": "POST api/user/addFriend/{username1}/{username2}",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/user/add-friend/:username1/:username2",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "add-friend",
+                                        ":username1",
+                                        ":username2"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username1",
+                                            "value": "newuser12"
+                                        },
+                                        {
+                                            "key": "username2",
+                                            "value": "man"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:31:23 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/user/get-friends/{username}",
+                    "id": "7d98096f-0a18-4fc9-94fa-d7bdf8251560",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/user/get-friends/:username",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "user",
+                                "get-friends",
+                                ":username"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "username",
+                                    "value": "newuser12",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "4efca7d0-dbdc-4dfe-8e2b-6afdb9da9f1d",
+                            "name": "GET api/user/get-friends/{username}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/user/get-friends/:username",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "get-friends",
+                                        ":username"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username",
+                                            "value": "newuser12",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:31:38 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n    \"man\"\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api/user/get-user/{id}",
+                    "id": "2cc284f2-5793-455e-945e-021f54d702d7",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/user/get-user/:id",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "user",
+                                "get-user",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "id",
+                                    "value": "625a0d5fb418c16ce5b1ef2a",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "4cee661e-f9f8-4669-a8f6-297150084eab",
+                            "name": "GET api/user/get-user/{id}",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/user/get-user/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "get-user",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "625a0d5fb418c16ce5b1ef2a",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:27:40 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"id\": \"625a0d5fb418c16ce5b1ef2a\",\n    \"type\": 0,\n    \"username\": \"newuser12\",\n    \"password\": \"password\",\n    \"experience\": 0,\n    \"gold\": 0\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api/user/login",
+                    "id": "53ff2d87-4f1d-4e6e-aee6-714afa34c3cd",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"username\":\"newuser12\",\r\n    \"password\":\"password\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/user/login",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "user",
+                                "login"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "3bc83cde-c39b-435d-8224-0653336b260c",
+                            "name": "POST api/user/login",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"newuser12\",\r\n    \"password\":\"password\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/user/login",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "login"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:27:23 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"id\": \"625a0d5fb418c16ce5b1ef2a\",\n    \"type\": 0,\n    \"username\": \"newuser12\",\n    \"password\": \"password\",\n    \"experience\": 0,\n    \"gold\": 0\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api/user/register",
+                    "id": "ccc40796-889c-4e6e-932c-ed2b5e8bffc0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"username\":\"newuser12\",\r\n    \"password\":\"password\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/user/register",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "user",
+                                "register"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "bf84ecc4-56df-4091-80ce-753aebcca8d2",
+                            "name": "POST api/user/register",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"username\":\"newuser12\",\r\n    \"password\":\"password\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/user/register",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "register"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:27:11 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE /api/user/delete-friend/",
+                    "id": "d4c29cba-1ef8-44c1-867b-903d63bbe667",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/user/delete-friend/:username1/:username2",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "user",
+                                "delete-friend",
+                                ":username1",
+                                ":username2"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "username1",
+                                    "value": "newuser12"
+                                },
+                                {
+                                    "key": "username2",
+                                    "value": "man"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "ddc96f84-6a8a-4cbf-8f31-e1239446325e",
+                            "name": "DELETE /api/user/delete-friend/",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/user/delete-friend/:username1/:username2",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "delete-friend",
+                                        ":username1",
+                                        ":username2"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "username1",
+                                            "value": "newuser12"
+                                        },
+                                        {
+                                            "key": "username2",
+                                            "value": "man"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Method"
+                                },
+                                {
+                                    "key": "Vary",
+                                    "value": "Access-Control-Request-Headers"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Sat, 16 Apr 2022 00:54:19 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "true"
+                        }
+                    ]
+                }
+            ],
+            "id": "ac2f5ab0-61c5-4038-b8ce-16a9b66782c0"
+        }
+    ],
+    "variable": [
+        {
+            "id": "38742eec-73d7-46aa-853d-f599d970ab33",
+            "key": "baseUrl",
+            "value": "http://localhost:8080",
+            "type": "string"
+        }
+    ]
+}
