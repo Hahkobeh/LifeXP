@@ -1,0 +1,359 @@
+openapi: 3.0.3
+info:
+  description: LifeXP API
+  title: LifeXP API
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+paths:
+  /api/discussion/create-board/{name}:
+    post:
+      operationId: createBoard
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: POST api/discussion/create-board/{name}
+      x-accepts: application/json
+  /api/discussion/create-comment:
+    post:
+      operationId: createComment
+      responses:
+        "200":
+          description: OK
+      summary: POST api/discussion/create-comment
+      x-accepts: application/json
+  /api/discussion/create-post:
+    post:
+      operationId: createPost
+      responses:
+        "200":
+          description: OK
+      summary: POST api/discussion/create-post
+      x-accepts: application/json
+  /api/discussion/delete-comment/{id}:
+    delete:
+      operationId: deleteComment
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: DELETE api/discussion/delete-comment/{id}
+      x-accepts: application/json
+  /api/discussion/delete-post/{id}:
+    delete:
+      operationId: deletePost
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: DELETE api/discussion/delete-post/{id}
+      x-accepts: application/json
+  /api/discussion/get-boards:
+    get:
+      operationId: getBoards
+      responses:
+        "200":
+          description: OK
+      summary: GET api/discussion/get-boards
+      x-accepts: application/json
+  /api/discussion/get-comments/{postId}:
+    get:
+      operationId: getComments
+      parameters:
+      - explode: false
+        in: path
+        name: postId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/discussion/get-comments/{postId}
+      x-accepts: application/json
+  /api/discussion/get-posts/{boardName}:
+    get:
+      operationId: getPosts
+      parameters:
+      - explode: false
+        in: path
+        name: boardName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/discussion/get-posts/{boardName}
+      x-accepts: application/json
+  /api/goal/complete/{id}:
+    put:
+      operationId: completeGoal
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: PUT api/goal/complete/{id}
+      x-accepts: application/json
+  /api/goal/create-goal:
+    post:
+      operationId: addGoal
+      responses:
+        "200":
+          description: OK
+      summary: POST api/goal/create-goal
+      x-accepts: application/json
+  /api/goal/delete/{id}:
+    delete:
+      operationId: deleteGoal
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: DELETE api/goal/delete/{id}
+      x-accepts: application/json
+  /api/goal/get-goals/{username}:
+    get:
+      operationId: getGoals
+      parameters:
+      - explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/goal/get-goals/{username}
+      x-accepts: application/json
+  /api/item/buy-item/{itemId}/{username}:
+    post:
+      operationId: buyItem
+      parameters:
+      - explode: false
+        in: path
+        name: itemId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: POST api/item/buy-item/{itemId}/{username}
+      x-accepts: application/json
+  /api/item/create-shop/{name}/{cost}:
+    post:
+      operationId: createShop
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: cost
+        required: true
+        schema:
+          format: int32
+          type: number
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: POST api/item/create-shop/{name}/{cost}
+      x-accepts: application/json
+  /api/item/equip-item/{username}/{itemId}:
+    put:
+      operationId: equipItem
+      parameters:
+      - explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: itemId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: PUT api/item/equip-item/{username}/{itemId}
+      x-accepts: application/json
+  /api/item/get-equipped/{username}:
+    get:
+      operationId: getEquipped
+      parameters:
+      - explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/item/get-equipped/{username}
+      x-accepts: application/json
+  /api/item/get-inventory/{username}:
+    get:
+      operationId: getInventory
+      parameters:
+      - explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/item/get-inventory/{username}
+      x-accepts: application/json
+  /api/item/get-items:
+    get:
+      operationId: getItems
+      responses:
+        "200":
+          description: OK
+      summary: GET api/item/get-items
+      x-accepts: application/json
+  /api/item/get-shops:
+    get:
+      operationId: getShops
+      responses:
+        "200":
+          description: OK
+      summary: GET api/item/get-shops
+      x-accepts: application/json
+  /api/user/addFriend/{username1}/{username2}:
+    post:
+      operationId: addFriend
+      parameters:
+      - explode: false
+        in: path
+        name: username1
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: username2
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: POST api/user/add-friend/{username1}/{username2}
+      x-accepts: application/json
+  /api/user/get-friends/{username}:
+    get:
+      operationId: getFriends
+      parameters:
+      - explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/user/get-friends/{username}
+      x-accepts: application/json
+  /api/user/get-user/{id}:
+    get:
+      operationId: getUser
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET api/user/get-user/{id}
+      x-accepts: application/json
+  /api/user/login:
+    post:
+      operationId: login
+      responses:
+        "200":
+          description: OK
+      summary: POST api/user/login
+      x-accepts: application/json
+  /api/user/register:
+    post:
+      operationId: register
+      responses:
+        "200":
+          description: OK
+      summary: POST api/user/register
+      x-accepts: application/json
+
+
